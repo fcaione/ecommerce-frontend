@@ -4,7 +4,7 @@
 #### [Anatoliy's GitHub](https://github.com/yesanatoliy) | [Anatoliy's LinkedIn](https://www.linkedin.com/in/anatoliy-agadzhanov-5a2a54173/) | [Freddy's GitHub](https://github.com/fcaione) | [Freddy's LinkedIn](https://www.linkedin.com/in/frederickcaione) | [HB's GitHub](https://github.com/hby77) | [HB's LinkedIn](https://www.linkedin.com/in/hyunbinyim/)
 ***
 ### ***Description***
-This is an e-commerce app where users can create their own profiles to post their own products to sell locally or through delivery. This is also a social app where users can interact with each other through direct messaging and following each other's pages in order to share their products. 
+This is an e-commerce app where users can create their own profiles to post their own products to sell locally or through delivery. This is also a social app where users can interact with each other through following each other's pages and commenting on listings. 
 
 ***
 ### ***Technologies Used***
