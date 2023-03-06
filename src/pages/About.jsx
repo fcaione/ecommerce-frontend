@@ -7,10 +7,9 @@ const About = () => {
       id: 1,
       title: 'Freddy Caione',
       href: 'https://www.linkedin.com/in/frederickcaione/',
-      description:
-        'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+      description: '',
       imageUrl:
-        'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80',
+        'https://cdn.discordapp.com/attachments/1062764461024358555/1082313913091240016/IMG_1055.jpeg',
       date: 'Mar 06, 2023',
       datetime: 'Mar 06, 2023',
       author: {
@@ -23,10 +22,9 @@ const About = () => {
       id: 2,
       title: 'Anatoliy Agadzhanov',
       href: 'https://www.linkedin.com/in/anatoliy-agadzhanov/',
-      description:
-        'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+      description: '',
       imageUrl:
-        'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80',
+        'https://cdn.discordapp.com/attachments/1063524576904101899/1082346422613053470/Screenshot_2023-03-06_at_11.55.51_AM.png',
       date: 'Mar 06, 2023',
       datetime: 'Mar 06, 2023',
       author: {
@@ -39,10 +37,9 @@ const About = () => {
       id: 3,
       title: 'Hyun Bin Yim',
       href: 'https://www.linkedin.com/in/hyunbinyim/',
-      description:
-        'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+      description: '',
       imageUrl:
-        'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80',
+        'https://cdn.discordapp.com/attachments/1062764461024358555/1082388587682746398/hbpic.jpeg',
       date: 'Mar 06, 2023',
       datetime: 'Mar 06, 2023',
       author: {

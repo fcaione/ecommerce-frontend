@@ -26,7 +26,6 @@ const Profile = () => {
   
     return (
       <div>
-        <Header/>
         <div>
           <img className="h-32 w-full object-cover lg:h-48" src={profile.backgroundImage} alt="" />
         </div>
