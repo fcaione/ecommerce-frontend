@@ -164,7 +164,7 @@ const Featured = () => {
           aria-labelledby="social-impact-heading"
           className="mx-auto max-w-7xl px-4 pt-24 sm:px-6 sm:pt-32 lg:px-8"
         >
-          <div className="relative overflow-hidden rounded-lg">
+          {/* <div className="relative overflow-hidden rounded-lg">
             <div className="absolute inset-0">
               <img
                 src="https://tailwindui.com/img/ecommerce-images/home-page-01-feature-section-01.jpg"
@@ -191,7 +191,7 @@ const Featured = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </div> */}
         </section>
   )
 }
