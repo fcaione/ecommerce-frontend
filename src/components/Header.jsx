@@ -17,7 +17,7 @@ const Header = () => {
         name: 'Women',
         featured: [
           {
-            name: 'New Arrivals',
+            name: 'Show All',
             href: '#',
             imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg',
             imageAlt: 'Models sitting back to back, wearing Basic Tee in black and bone.',
@@ -46,7 +46,7 @@ const Header = () => {
         name: 'Men',
         featured: [
           {
-            name: 'New Arrivals',
+            name: 'Show All',
             href: '#',
             imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-01.jpg',
             imageAlt: 'Hats and sweaters on wood shelves next to various colors of t-shirts on hangers.',
@@ -72,10 +72,70 @@ const Header = () => {
           },
         ],
       },
+      {
+        name: 'Jewellery',
+        featured: [
+          {
+            name: 'Show All',
+            href: '#',
+            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-01.jpg',
+            imageAlt: 'Hats and sweaters on wood shelves next to various colors of t-shirts on hangers.',
+          },
+          {
+            name: 'Bracelets',
+            href: '#',
+            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-02.jpg',
+            imageAlt: 'Model wearing light heather gray t-shirt.',
+          },
+          {
+            name: 'Necklaces',
+            href: '#',
+            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-03.jpg',
+            imageAlt:
+              'Grey 6-panel baseball hat with black brim, black mountain graphic on front, and light heather gray body.',
+          },
+          {
+            name: 'Rings',
+            href: '#',
+            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-04.jpg',
+            imageAlt: 'Model putting folded cash into slim card holder olive leather wallet with hand stitching.',
+          },
+        ],
+      },
+      {
+        name: 'More',
+        featured: [
+          {
+            name: 'Show All',
+            href: '#',
+            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-01.jpg',
+            imageAlt: 'Hats and sweaters on wood shelves next to various colors of t-shirts on hangers.',
+          },
+          {
+            name: 'Home',
+            href: '#',
+            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-02.jpg',
+            imageAlt: 'Model wearing light heather gray t-shirt.',
+          },
+          {
+            name: 'Art',
+            href: '#',
+            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-03.jpg',
+            imageAlt:
+              'Grey 6-panel baseball hat with black brim, black mountain graphic on front, and light heather gray body.',
+          },
+          {
+            name: 'Other',
+            href: '#',
+            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-04.jpg',
+            imageAlt: 'Model putting folded cash into slim card holder olive leather wallet with hand stitching.',
+          },
+        ],
+      },
     ],
     pages: [
-      { name: 'Company', href: '#' },
-      { name: 'Stores', href: '#' },
+      { name: 'Jewellery', href: '#' },
+      { name: 'More', href: '#' },
     ],
   }
   const categories = [
@@ -257,7 +317,7 @@ const Header = () => {
                     </a>
                   </div>
                   <div className="flow-root">
-                    <a href="#" className="-m-2 block p-2 font-medium text-gray-900">
+                    <a href="http://localhost:3000/signin" className="-m-2 block p-2 font-medium text-gray-900">
                       Sign in
                     </a>
                   </div>
@@ -322,7 +382,7 @@ const Header = () => {
                 </form> */}
 
                 <div className="flex items-center space-x-6">
-                  <a href="#" className="text-sm font-medium text-white hover:text-gray-100">
+                  <a href="http://localhost:3000/signin" className="text-sm font-medium text-white hover:text-gray-100">
                     Sign in
                   </a>
                   <a href="#" className="text-sm font-medium text-white hover:text-gray-100">
