@@ -9,7 +9,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
-const Footer = () => {
+const Highlight = () => {
   const currencies = ['CAD', 'USD', 'AUD', 'EUR', 'GBP']
   const navigation = {
     categories: [
@@ -160,97 +160,36 @@ const Footer = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <footer aria-labelledby="footer-heading" className="bg-gray-900">
-        <h2 id="footer-heading" className="sr-only">
-          Footer
-        </h2>
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="py-20 xl:grid xl:grid-cols-3 xl:gap-8">
-            <div className="grid grid-cols-2 gap-8 xl:col-span-2">
-              <div className="space-y-12 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
-                <div>
-                  <h3 className="text-sm font-medium text-white">Shop</h3>
-                  <ul role="list" className="mt-6 space-y-6">
-                    {footerNavigation.shop.map((item) => (
-                      <li key={item.name} className="text-sm">
-                        <a href={item.href} className="text-gray-300 hover:text-white">
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-sm font-medium text-white">Company</h3>
-                  <ul role="list" className="mt-6 space-y-6">
-                    {footerNavigation.company.map((item) => (
-                      <li key={item.name} className="text-sm">
-                        <a href={item.href} className="text-gray-300 hover:text-white">
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <div className="space-y-12 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
-                <div>
-                  <h3 className="text-sm font-medium text-white">Account</h3>
-                  <ul role="list" className="mt-6 space-y-6">
-                    {footerNavigation.account.map((item) => (
-                      <li key={item.name} className="text-sm">
-                        <a href={item.href} className="text-gray-300 hover:text-white">
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-sm font-medium text-white">Connect</h3>
-                  <ul role="list" className="mt-6 space-y-6">
-                    {footerNavigation.connect.map((item) => (
-                      <li key={item.name} className="text-sm">
-                        <a href={item.href} className="text-gray-300 hover:text-white">
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+        <section aria-labelledby="comfort-heading" className="mx-auto max-w-7xl py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-lg">
+            <div className="absolute inset-0">
+              <img
+                src="https://tailwindui.com/img/ecommerce-images/home-page-01-feature-section-02.jpg"
+                alt=""
+                className="h-full w-full object-cover object-center"
+              />
+            </div>
+            <div className="relative bg-gray-900 bg-opacity-75 py-32 px-6 sm:py-40 sm:px-12 lg:px-16">
+              <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center">
+                <h2 id="comfort-heading" className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                  Simple productivity
+                </h2>
+                <p className="mt-3 text-xl text-white">
+                  Endless tasks, limited hours, a single piece of paper. Not really a haiku, but we're doing our best
+                  here. No kanban boards, burndown charts, or tangled flowcharts with our Focus system. Just the
+                  undeniable urge to fill empty circles.
+                </p>
+                <a
+                  href="#"
+                  className="mt-8 block w-full rounded-md border border-transparent bg-white py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto"
+                >
+                  Shop Focus
+                </a>
               </div>
             </div>
-            <div className="mt-12 md:mt-16 xl:mt-0">
-              <h3 className="text-sm font-medium text-white">Sign up for our newsletter</h3>
-              <p className="mt-6 text-sm text-gray-300">The latest deals and savings, sent to your inbox weekly.</p>
-              <form className="mt-2 flex sm:max-w-md">
-                <label htmlFor="email-address" className="sr-only">
-                  Email address
-                </label>
-                <input
-                  id="email-address"
-                  type="text"
-                  autoComplete="email"
-                  required
-                  className="w-full min-w-0 appearance-none rounded-md border border-white bg-white py-2 px-4 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900"
-                />
-                <div className="ml-4 flex-shrink-0">
-                  <button
-                    type="submit"
-                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-900"
-                  >
-                    Sign up
-                  </button>
-                </div>
-              </form>
-            </div>
           </div>
-
-          <div className="border-t border-gray-800 py-10">
-            <p className="text-sm text-gray-400">Copyright &copy; 2021 Your Company, Inc.</p>
-          </div>
-        </div>
-      </footer>
+        </section>
   )
 }
-export default Footer
+
+export default Highlight
