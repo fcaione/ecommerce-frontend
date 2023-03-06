@@ -11,9 +11,6 @@ import Home from './pages/Home';
 import Listings from "./pages/Listings";
 import Header from "./components/Header";
 
-
-
-
 function App() {
 
   const [listings, setListings] = useState([])
@@ -27,6 +24,8 @@ function App() {
     setListings(res.data)
   }
 
+  const [user, setUser] = useState(null)
+
   return (
     <>
       <Header/>
@@ -37,8 +36,8 @@ function App() {
           <Route path="/listings" element={<Listings listings={listings}/>} />
           <Route path="/listings/:listingsId" element={<ListDetails />} />
           <Route path="/checkout" element={<CheckoutForm />} />
-          <Route path="/signIn" element={<SignIn />} />
-          <Route path="/signUn" element={<SignUp />} />
+          <Route path="/signIn" element={<SignIn setUser={setUser} />} />
+          <Route path="/signUp" element={<SignUp />} />
         </Routes>
     </>
   );
