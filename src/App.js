@@ -9,6 +9,7 @@ import About from './pages/About';
 import Home from './pages/Home';
 import Listings from "./pages/Listings";
 import Header from "./components/Header";
+import { CheckSession } from "./services/Auth";
 import Client from "./services/api";
 
 function App() {
@@ -26,13 +27,25 @@ function App() {
 
   const [user, setUser] = useState(null)
 
+  const checkToken = async () => {
+    const currentUser = await CheckSession()
+    setUser(currentUser)
+  }
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      checkToken()
+    }
+  }, [])
+
   return (
     <>
       <Header/>
         <Routes>
           <Route path="/" element={<Home  listings={listings}/> } />
           <Route path="/about" element={<About />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<Profile user={user} />} />
           <Route path="/listings" element={<Listings listings={listings}/>} />
           <Route path="/listings/:listingId" element={<ListDetails />} />
           <Route path="/checkout" element={<CheckoutForm />} />

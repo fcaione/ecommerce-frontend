@@ -1,13 +1,12 @@
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/20/solid'
-import Header from '../components/Header'
 import Footer from '../components/Footer'
 import ProfileTabs from '../components/ProfileTabs'
 
-const Profile = () => {
+const Profile = ({user}) => {
 
   const profile = {
-    name: 'Ricardo Cooper',
-    email: 'ricardo.cooper@example.com',
+    name: user?.name,
+    email: user?.email,
     avatar:
       'https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
     backgroundImage:
