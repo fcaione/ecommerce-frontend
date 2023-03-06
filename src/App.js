@@ -21,7 +21,6 @@ function App() {
 
   const getAllListings = async () => {
     const res = await Client.get(`/listings`)
-    console.log(res.data)
     setListings(res.data)
   }
 

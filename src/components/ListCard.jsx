@@ -10,7 +10,6 @@ const ListCard = (props) => {
 						alt="picture of product"
 						className="h-full w-full object-cover object-center"
 					/>
-          {console.log(props.image)}
 				</div>
 				<h3 className="mt-4 text-sm text-gray-700">
 						<span className="absolute inset-0" />
