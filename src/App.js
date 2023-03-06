@@ -10,6 +10,7 @@ import About from './pages/About';
 import Home from './pages/Home';
 import Listings from "./pages/Listings";
 import Header from "./components/Header";
+import { CheckSession } from "./services/Auth";
 
 function App() {
 
@@ -25,6 +26,18 @@ function App() {
   }
 
   const [user, setUser] = useState(null)
+
+  const checkToken = async () => {
+    const user = await CheckSession()
+    setUser(user)
+  }
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      checkToken()
+    }
+  }, [])
 
   return (
     <>
