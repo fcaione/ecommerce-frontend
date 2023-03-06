@@ -1,3 +1,4 @@
+import posingshoes from '../images/posingshoes.webp'
 const Highlight = () => {
 
   return (
@@ -5,9 +6,9 @@ const Highlight = () => {
           <div className="relative overflow-hidden rounded-lg">
             <div className="absolute inset-0">
               <img
-                src="https://tailwindui.com/img/ecommerce-images/home-page-01-feature-section-02.jpg"
+                src={posingshoes}
                 alt=""
-                className="h-full w-full object-cover object-center"
+                className="h-full w-full object-cover object-bottom"
               />
             </div>
             <div className="relative bg-gray-900 bg-opacity-75 py-32 px-6 sm:py-40 sm:px-12 lg:px-16">

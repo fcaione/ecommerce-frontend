@@ -1,3 +1,4 @@
+import posinggirl from '../images/posinggirl.jpeg'
 import { Fragment, useState } from 'react'
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
 import {
@@ -164,7 +165,7 @@ const Hero = () => {
         {/* Decorative image and overlay */}
         <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
           <img
-            src="https://tailwindui.com/img/ecommerce-images/home-page-01-hero-full-width.jpg"
+            src={posinggirl}
             alt=""
             className="h-full w-full object-cover object-center"
           />

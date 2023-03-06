@@ -8,6 +8,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import posinggirl from '../images/posinggirl.jpeg'
 
 const Header = () => {
   // (ignore this section) const currencies = ['CAD', 'USD', 'AUD', 'EUR', 'GBP']
@@ -19,26 +20,26 @@ const Header = () => {
           {
             name: 'Show All',
             href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg',
-            imageAlt: 'Models sitting back to back, wearing Basic Tee in black and bone.',
+            imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082395659119894568/6dd6d5905823f4f2e4eb7b7596e136d1.png',
+            imageAlt: 'All Listings',
           },
           {
-            name: 'Basic Tees',
+            name: 'Tops',
             href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg',
-            imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
+            imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082394142707036233/Strong-Muscle-Graphic-Men-Tshirt-Hip-Hop-Black-Shirts-Men-Streetwear-Summer-Graphic-Tees-Man-Punk.png',
+            imageAlt: 'Women Tops',
           },
           {
-            name: 'Accessories',
+            name: 'Bottoms',
             href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-03.jpg',
-            imageAlt: 'Model wearing minimalist watch with black wristband and white watch face.',
+            imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082390839159947274/wmnpants.jpg',
+            imageAlt: 'Women Bottoms',
           },
           {
-            name: 'Carry',
+            name: 'Shoes',
             href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-04.jpg',
-            imageAlt: 'Model opening tan leather long wallet with credit card pockets and cash pouch.',
+            imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082396339545051237/best-new-balance-sneakwea-for-women.png',
+            imageAlt: 'Women Shoes',
           },
         ],
       },
@@ -48,57 +49,55 @@ const Header = () => {
           {
             name: 'Show All',
             href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-01.jpg',
-            imageAlt: 'Hats and sweaters on wood shelves next to various colors of t-shirts on hangers.',
+            imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082396593086533765/images.png',
+            imageAlt: 'All Listings',
           },
           {
-            name: 'Basic Tees',
+            name: 'Tops',
             href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-02.jpg',
-            imageAlt: 'Model wearing light heather gray t-shirt.',
+            imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082394037077680260/Illest-Legend-Tan-T-Shirt-_365430-front-US.png',
+            imageAlt: 'Men Tops',
           },
           {
-            name: 'Accessories',
+            name: 'Bottoms',
             href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-03.jpg',
-            imageAlt:
-              'Grey 6-panel baseball hat with black brim, black mountain graphic on front, and light heather gray body.',
+            imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082393822836834384/163005271711882ebe92cd4e130a6c1da38f6c41e4_thumbnail_600x.png',
+            imageAlt: 'Men Bottoms',
           },
           {
-            name: 'Carry',
+            name: 'Shoes',
             href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-04.jpg',
-            imageAlt: 'Model putting folded cash into slim card holder olive leather wallet with hand stitching.',
+            imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082397342541561966/nike-dunk-low-aged-2.png',
+            imageAlt: 'Men Shoes',
           },
         ],
       },
       {
-        name: 'Jewellery',
+        name: 'Style',
         featured: [
           {
             name: 'Show All',
             href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-01.jpg',
-            imageAlt: 'Hats and sweaters on wood shelves next to various colors of t-shirts on hangers.',
+            imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082399420164882442/golden-watch.png',
+            imageAlt: 'All Listings',
           },
           {
             name: 'Bracelets',
             href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-02.jpg',
-            imageAlt: 'Model wearing light heather gray t-shirt.',
+            imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082397880997920909/1651604269-cartier-1651604262.png',
+            imageAlt: 'Bracelets',
           },
           {
-            name: 'Necklaces',
+            name: 'Earrings',
             href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-03.jpg',
-            imageAlt:
-              'Grey 6-panel baseball hat with black brim, black mountain graphic on front, and light heather gray body.',
+            imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082399160034144316/2Q.png',
+            imageAlt: 'Earrings',
           },
           {
             name: 'Rings',
             href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-04.jpg',
-            imageAlt: 'Model putting folded cash into slim card holder olive leather wallet with hand stitching.',
+            imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082398115258187828/GUEST_89aed79b-2d4e-4ce9-9b47-b27dc3ec681c.png',
+            imageAlt: 'Rings',
           },
         ],
       },
@@ -108,35 +107,34 @@ const Header = () => {
           {
             name: 'Show All',
             href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-01.jpg',
-            imageAlt: 'Hats and sweaters on wood shelves next to various colors of t-shirts on hangers.',
+            imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082401201221546096/5-3.png',
+            imageAlt: 'All Listings',
           },
           {
             name: 'Home',
             href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-02.jpg',
-            imageAlt: 'Model wearing light heather gray t-shirt.',
+            imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082399892086984734/il_794xN.png',
+            imageAlt: 'Home Products',
           },
           {
             name: 'Art',
             href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-03.jpg',
-            imageAlt:
-              'Grey 6-panel baseball hat with black brim, black mountain graphic on front, and light heather gray body.',
+            imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082399768438902914/s-l1600.png',
+            imageAlt: 'Art Products',
           },
           {
             name: 'Other',
             href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-04.jpg',
-            imageAlt: 'Model putting folded cash into slim card holder olive leather wallet with hand stitching.',
+            imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082400246576992276/KAWS-Five-Years-Later-Companion-Figure-Grey.png',
+            imageAlt: 'All other things',
           },
         ],
       },
     ],
-    pages: [
-      { name: 'Jewellery', href: '#' },
-      { name: 'More', href: '#' },
-    ],
+    // pages: [
+    //   { name: 'Jewellery', href: '#' },
+    //   { name: 'More', href: '#' },
+    // ],
   }
   const categories = [
     {
@@ -301,7 +299,7 @@ const Header = () => {
                   </Tab.Panels>
                 </Tab.Group>
 
-                <div className="space-y-6 border-t border-gray-200 py-6 px-4">
+                {/* <div className="space-y-6 border-t border-gray-200 py-6 px-4">
                   {navigation.pages.map((page) => (
                     <div key={page.name} className="flow-root">
                       <a href={page.href} className="-m-2 block p-2 font-medium text-gray-900">
@@ -309,7 +307,7 @@ const Header = () => {
                       </a>
                     </div>
                   ))}
-                </div>
+                </div> */}
 
                 <div className="space-y-6 border-t border-gray-200 py-6 px-4">
                   <div className="flow-root">
@@ -476,7 +474,7 @@ const Header = () => {
                             </Popover>
                           ))}
 
-                          {navigation.pages.map((page) => (
+                          {/* {navigation.pages.map((page) => (
                             <a
                               key={page.name}
                               href={page.href}
@@ -484,7 +482,7 @@ const Header = () => {
                             >
                               {page.name}
                             </a>
-                          ))}
+                          ))} */}
                         </div>
                       </Popover.Group>
                     </div>
@@ -504,7 +502,7 @@ const Header = () => {
                     </div>
 
                     {/* Logo (lg-) */}
-                    <a href="#" className="lg:hidden">
+                    <a href="http://localhost:3000/" className="lg:hidden">
                       <span className="sr-only">Ecommerce</span>
                       <img src="https://cdn-user-icons.flaticon.com/95365/95365319/1678081629776.svg?token=exp=1678082530~hmac=e6624b59db24810edf1cef285b4774aa" alt="" className="h-8 w-auto" />
                     </a>
