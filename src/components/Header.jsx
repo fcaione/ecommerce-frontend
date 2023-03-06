@@ -10,7 +10,7 @@ import {
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 const Header = () => {
-  const currencies = ['CAD', 'USD', 'AUD', 'EUR', 'GBP']
+  // (ignore this section) const currencies = ['CAD', 'USD', 'AUD', 'EUR', 'GBP']
   const navigation = {
     categories: [
       {
@@ -184,34 +184,35 @@ const Header = () => {
       description: 'Be more productive than enterprise project managers with a single piece of paper.',
     },
   ]
-  const footerNavigation = {
-    shop: [
-      { name: 'Bags', href: '#' },
-      { name: 'Tees', href: '#' },
-      { name: 'Objects', href: '#' },
-      { name: 'Home Goods', href: '#' },
-      { name: 'Accessories', href: '#' },
-    ],
-    company: [
-      { name: 'Who we are', href: '#' },
-      { name: 'Sustainability', href: '#' },
-      { name: 'Press', href: '#' },
-      { name: 'Careers', href: '#' },
-      { name: 'Terms & Conditions', href: '#' },
-      { name: 'Privacy', href: '#' },
-    ],
-    account: [
-      { name: 'Manage Account', href: '#' },
-      { name: 'Returns & Exchanges', href: '#' },
-      { name: 'Redeem a Gift Card', href: '#' },
-    ],
-    connect: [
-      { name: 'Contact Us', href: '#' },
-      { name: 'Twitter', href: '#' },
-      { name: 'Instagram', href: '#' },
-      { name: 'Pinterest', href: '#' },
-    ],
-  }
+  // (ignore this section)
+  // const footerNavigation = {
+  //   shop: [
+  //     { name: 'Bags', href: '#' },
+  //     { name: 'Tees', href: '#' },
+  //     { name: 'Objects', href: '#' },
+  //     { name: 'Home Goods', href: '#' },
+  //     { name: 'Accessories', href: '#' },
+  //   ],
+  //   company: [
+  //     { name: 'Who we are', href: '#' },
+  //     { name: 'Sustainability', href: '#' },
+  //     { name: 'Press', href: '#' },
+  //     { name: 'Careers', href: '#' },
+  //     { name: 'Terms & Conditions', href: '#' },
+  //     { name: 'Privacy', href: '#' },
+  //   ],
+  //   account: [
+  //     { name: 'Manage Account', href: '#' },
+  //     { name: 'Returns & Exchanges', href: '#' },
+  //     { name: 'Redeem a Gift Card', href: '#' },
+  //   ],
+  //   connect: [
+  //     { name: 'Contact Us', href: '#' },
+  //     { name: 'Twitter', href: '#' },
+  //     { name: 'Instagram', href: '#' },
+  //     { name: 'Pinterest', href: '#' },
+  //   ],
+  // }
 
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -400,7 +401,7 @@ const Header = () => {
                     {/* Logo (lg+) */}
                     <div className="hidden lg:flex lg:flex-1 lg:items-center">
                       <a href="http://localhost:3000/">
-                        <span className="sr-only">Your Company</span>
+                        <span className="sr-only">Ecommerce</span>
                         <img
                           className="h-11 w-auto"
                           src="https://cdn-user-icons.flaticon.com/95365/95365319/1678081629776.svg?token=exp=1678082530~hmac=e6624b59db24810edf1cef285b4774aa"
@@ -504,8 +505,8 @@ const Header = () => {
 
                     {/* Logo (lg-) */}
                     <a href="#" className="lg:hidden">
-                      <span className="sr-only">Your Company</span>
-                      <img src="https://tailwindui.com/img/logos/mark.svg?color=white" alt="" className="h-8 w-auto" />
+                      <span className="sr-only">Ecommerce</span>
+                      <img src="https://cdn-user-icons.flaticon.com/95365/95365319/1678081629776.svg?token=exp=1678082530~hmac=e6624b59db24810edf1cef285b4774aa" alt="" className="h-8 w-auto" />
                     </a>
 
                     <div className="flex flex-1 items-center justify-end">
