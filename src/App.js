@@ -7,11 +7,14 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import About from './pages/About';
 import Home from './pages/Home';
-
+import { useState } from "react";
 
 
 
 function App() {
+
+  const [user, setUser] = useState(null)
+
   return (
     <>
         <Routes>
@@ -21,8 +24,8 @@ function App() {
           <Route path="/listCard" element={<ListCard />} />
           <Route path="/listDetails" element={<ListDetails />} />
           <Route path="/checkout" element={<CheckoutForm />} />
-          <Route path="/signIn" element={<SignIn />} />
-          <Route path="/signUn" element={<SignUp />} />
+          <Route path="/signIn" element={<SignIn setUser={setUser} />} />
+          <Route path="/signUp" element={<SignUp />} />
         </Routes>
     </>
   );
