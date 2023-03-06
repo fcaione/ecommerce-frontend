@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom"
 import { useState, useEffect } from "react";
-import axios from "axios";
 import CheckoutForm from './pages/CheckoutForm';
 import ListDetails from './pages/ListDetails';
 import Profile from './pages/Profile';
@@ -11,6 +10,7 @@ import Home from './pages/Home';
 import Listings from "./pages/Listings";
 import Header from "./components/Header";
 import { CheckSession } from "./services/Auth";
+import Client from "./services/api";
 
 function App() {
 
@@ -21,7 +21,7 @@ function App() {
   }, [])
 
   const getAllListings = async () => {
-    const res = await axios.get(`http://localhost:3001/api/listings`)
+    const res = await Client.get(`/listings`)
     setListings(res.data)
   }
 
@@ -47,7 +47,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/profile" element={<Profile user={user} />} />
           <Route path="/listings" element={<Listings listings={listings}/>} />
-          <Route path="/listings/:listingsId" element={<ListDetails />} />
+          <Route path="/listings/:listingId" element={<ListDetails />} />
           <Route path="/checkout" element={<CheckoutForm />} />
           <Route path="/signIn" element={<SignIn setUser={setUser} />} />
           <Route path="/signUp" element={<SignUp />} />
