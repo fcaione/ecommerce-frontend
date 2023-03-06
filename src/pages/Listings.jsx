@@ -1,6 +1,5 @@
 import ListCard from "../components/ListCard"
 const Listings = ({ listings }) => {
-    
       return (
         <div className="bg-white">
           <div className="mx-auto max-w-7xl overflow-hidden py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
