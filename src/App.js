@@ -28,8 +28,8 @@ function App() {
   const [user, setUser] = useState(null)
 
   const checkToken = async () => {
-    const user = await CheckSession()
-    setUser(user)
+    const currentUser = await CheckSession()
+    setUser(currentUser)
   }
 
   useEffect(() => {
@@ -45,7 +45,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home  listings={listings}/> } />
           <Route path="/about" element={<About />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<Profile user={user} />} />
           <Route path="/listings" element={<Listings listings={listings}/>} />
           <Route path="/listings/:listingsId" element={<ListDetails />} />
           <Route path="/checkout" element={<CheckoutForm />} />
