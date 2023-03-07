@@ -13,7 +13,7 @@ const tabs = [
         
         description:
         <div className="bg-white">
-          <div className="mx-auto max-w-7xl overflow-hidden py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl overflow-hidden px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-6 lg:gap-x-8">
               {listings.map((listing) => (
                 <ListCard {...listing}/>
@@ -71,7 +71,7 @@ function classNames(...classes) {
 
   return (
     <div className="bg-white">
-      <section aria-labelledby="features-heading" className="mx-auto max-w-7xl py-32 sm:px-2 lg:px-8">
+      <section aria-labelledby="features-heading" className="mx-auto max-w-7xl sm:px-2 lg:px-8">
         <div className="mx-auto max-w-2xl px-4 lg:max-w-none lg:px-0">
           <div className="max-w-3xl">
           
@@ -102,9 +102,9 @@ function classNames(...classes) {
 
             <Tab.Panels as={Fragment}>
               {tabs.map((tab) => (
-                <Tab.Panel key={tab.name} className="space-y-16 pt-10 lg:pt-16">
+                <Tab.Panel key={tab.name} className="space-y-16 pt-10">
                   {tab.features.map((feature) => (
-                    <div key={feature.name} className="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8">
+                    <div key={feature.name} className="flex flex-col-reverse lg:grid  lg:gap-x-8">
                       <div className="mt-6 lg:col-span-5 lg:mt-0">
                         <p className="mt-2 text-sm text-gray-500">{feature.description}</p>
                       </div>
