@@ -52,7 +52,7 @@ function App() {
           <Route path="/checkout" element={<CheckoutForm />} />
           <Route path="/signIn" element={<SignIn setUser={setUser} />} />
           <Route path="/signUp" element={<SignUp />} />
-          <Route path="/addListingsForm" element={<AddListingsForm />} />
+          <Route path="/addListingsForm" element={<AddListingsForm user={user} />} />
         </Routes>
     </>
   );
