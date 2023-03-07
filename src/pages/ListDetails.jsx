@@ -1,12 +1,18 @@
 import { useState, useEffect } from "react"
 import { Disclosure, RadioGroup, Tab } from "@headlessui/react"
 import { StarIcon } from "@heroicons/react/20/solid"
-import { HeartIcon, MinusIcon, PlusIcon } from "@heroicons/react/24/outline"
+import {
+	HeartIcon,
+	MinusIcon,
+	PlusIcon,
+	TrashIcon,
+} from "@heroicons/react/24/outline"
 import Client from "../services/api"
 import { useParams } from "react-router-dom"
 import Comments from "../components/Comments"
+import ToggleEditListing from "../components/ToggleEditListing"
 
-const ListDetails = () => {
+const ListDetails = ({ user }) => {
 	function classNames(...classes) {
 		return classes.filter(Boolean).join(" ")
 	}
@@ -16,10 +22,10 @@ const ListDetails = () => {
 	// const [selectedColor, setSelectedColor] = useState(product.colors[0])
 
 	const [selectedListing, setSelectedListing] = useState({})
+	const [toggleEditing, setToggleEditing] = useState(false)
 
 	const getListing = async () => {
 		const res = await Client.get(`/listings/${listingId}`)
-		console.log(res)
 		setSelectedListing(res.data)
 	}
 
@@ -27,7 +33,18 @@ const ListDetails = () => {
 		getListing()
 	}, [])
 
-	return (
+	const deleteListing = async () => {
+		const res = await Client.delete(`/listings/${listingId}`)
+	}
+
+	return toggleEditing ? (
+		<ToggleEditListing
+			selectedListing={selectedListing}
+			user={user}
+			setToggleEditing={setToggleEditing}
+			getListing={getListing}
+		/>
+	) : (
 		<>
 			<div className="bg-white">
 				<div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -97,12 +114,29 @@ const ListDetails = () => {
               </div> */}
 
 								<div className="sm:flex-col1 mt-10 flex">
-									<button
-										type="submit"
-										className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
-									>
-										Add to bag
-									</button>
+									<div className="sm:flex-col1 mt-10 flex-col">
+										{user?.id !==
+											selectedListing.owner?.id && (
+											<button
+												type="submit"
+												className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
+											>
+												Add to bag
+											</button>
+										)}
+										{user?.id ===
+											selectedListing.owner?.id && (
+											<button
+												type="submit"
+												className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-gray-600 py-3 px-8 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full mt-5"
+												onClick={() =>
+													setToggleEditing(true)
+												}
+											>
+												Edit Listing
+											</button>
+										)}
+									</div>
 
 									<button
 										type="button"
@@ -116,6 +150,21 @@ const ListDetails = () => {
 											Add to favorites
 										</span>
 									</button>
+									{user?.id === selectedListing.owner?.id && (
+										<button
+											type="button"
+											className="ml-4 flex items-center justify-center rounded-md py-3 px-3 text-gray-400 hover:bg-gray-100 hover:text-gray-500"
+											onClick={deleteListing}
+										>
+											<TrashIcon
+												className="h-6 w-6 flex-shrink-0"
+												aria-hidden="true"
+											/>
+											<span className="sr-only">
+												Add to favorites
+											</span>
+										</button>
+									)}
 								</div>
 							</form>
 
@@ -171,7 +220,7 @@ const ListDetails = () => {
 					</div>
 				</div>
 			</div>
-			<Comments comments={selectedListing.comments}/>
+			<Comments comments={selectedListing.comments} />
 		</>
 	)
 }

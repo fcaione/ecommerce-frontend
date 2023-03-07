@@ -4,7 +4,6 @@ import ListCard from './ListCard'
 
 const ProfileTabs = ({listings}) => {
 
-
 const tabs = [
   {
     name: 'All',
