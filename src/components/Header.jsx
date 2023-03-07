@@ -222,7 +222,6 @@ const Header = ({ user }) => {
                     ))}
                   </Tab.Panels>
                 </Tab.Group>
-                {!user ?
                   <div className="space-y-6 border-t border-gray-200 py-6 px-4">
                     <div className="flow-root">
                       <a href="http://localhost:3000/signup" className="-m-2 block p-2 font-medium text-gray-900">
@@ -234,26 +233,18 @@ const Header = ({ user }) => {
                         Sign in
                       </a>
                     </div>
-                  </div> :
-                  <div className="space-y-6 border-t border-gray-200 py-6 px-4">
-                    <div className="flow-root">
-                      <a href="http://localhost:3000/profile" className="-m-2 block p-2 font-medium text-gray-900">
-                        Profile
-                      </a>
-                    </div>
-                  </div>
-                }
+                  </div> 
               </Dialog.Panel>
             </Transition.Child>
           </div>
         </Dialog>
       </Transition.Root>
-
       <header className="relative z-10 bg-slate-800">
         <nav aria-label="Top">
           {/* Top navigation */}
           <div className="bg-gray-900">
             <div className="mx-auto flex h-10 items-center justify-end px-4 sm:px-6 lg:px-8">
+          {!user ?
               <div className="flex items-center space-x-6">
                 <a href="http://localhost:3000/signin" className="text-sm font-medium text-white hover:text-gray-100">
                   Sign in
@@ -261,8 +252,17 @@ const Header = ({ user }) => {
                 <a href="http://localhost:3000/signup" className="text-sm font-medium text-white hover:text-gray-100">
                   Create an account
                 </a>
-              </div>
-            </div>
+              </div> :
+              <div className="flex items-center space-x-6">
+              <a href="http://localhost:3000/profile" className="text-sm font-medium text-white hover:text-gray-100">
+                  Profile 
+                </a>
+              <a href="http://localhost:3000/addListingsForm" className="text-sm font-medium text-white hover:text-gray-100">
+                  Add Listing
+                </a>
+              </div>}
+            </div> 
+
           </div>
 
           {/* Secondary navigation */}
