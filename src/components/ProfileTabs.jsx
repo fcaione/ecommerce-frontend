@@ -1,7 +1,8 @@
 import { Fragment } from 'react'
 import { Tab } from '@headlessui/react'
+import ListCard from './ListCard'
 
-const ProfileTabs = () => {
+const ProfileTabs = ({listings}) => {
 
 
 const tabs = [
@@ -9,11 +10,18 @@ const tabs = [
     name: 'All',
     features: [
       {
-        name: 'Adaptive and modular',
+        
         description:
-          'The Organize base set allows you to configure and evolve your setup as your items and habits change. The included trays and optional add-ons are easily rearranged to achieve that perfect setup.',
-        imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-06-detail-01.jpg',
-        imageAlt: 'Maple organizer base with slots, supporting white polycarbonate trays of various sizes.',
+        <div className="bg-white">
+          <div className="mx-auto max-w-7xl overflow-hidden py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-6 lg:gap-x-8">
+              {listings.map((listing) => (
+                <ListCard {...listing}/>
+              ))}
+            </div>
+          </div>
+        </div>
+        
       },
     ],
   },
@@ -66,13 +74,7 @@ function classNames(...classes) {
       <section aria-labelledby="features-heading" className="mx-auto max-w-7xl py-32 sm:px-2 lg:px-8">
         <div className="mx-auto max-w-2xl px-4 lg:max-w-none lg:px-0">
           <div className="max-w-3xl">
-            <h2 id="features-heading" className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Technical Specifications
-            </h2>
-            <p className="mt-4 text-gray-500">
-              The Organize modular system offers endless options for arranging your favorite and most used items. Keep
-              everything at reach and in its place, while dressing up your workspace.
-            </p>
+          
           </div>
 
           <Tab.Group as="div" className="mt-4">
@@ -104,13 +106,7 @@ function classNames(...classes) {
                   {tab.features.map((feature) => (
                     <div key={feature.name} className="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8">
                       <div className="mt-6 lg:col-span-5 lg:mt-0">
-                        <h3 className="text-lg font-medium text-gray-900">{feature.name}</h3>
                         <p className="mt-2 text-sm text-gray-500">{feature.description}</p>
-                      </div>
-                      <div className="lg:col-span-7">
-                        <div className="aspect-w-2 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 sm:aspect-w-5 sm:aspect-h-2">
-                          <img src={feature.imageSrc} alt={feature.imageAlt} className="object-cover object-center" />
-                        </div>
                       </div>
                     </div>
                   ))}

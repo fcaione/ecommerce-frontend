@@ -45,7 +45,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home  listings={listings}/> } />
           <Route path="/about" element={<About />} />
-          <Route path="/profile" element={<Profile user={user} />} />
+          <Route path="/profile" element={<Profile user={user} listings={listings} />} />
           <Route path="/listings" element={<Listings listings={listings}/>} />
           <Route path="/listings/:listingId" element={<ListDetails />} />
           <Route path="/checkout" element={<CheckoutForm />} />
