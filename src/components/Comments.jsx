@@ -12,7 +12,6 @@ const Comments = (props) => {
 					Recent comments
 				</h2>
 				<div className="mt-6 space-y-10 divide-y divide-gray-200 border-t border-b border-gray-200 pb-10">
-					{console.log(props)}
 					{props.comments?.map((comment) => (
 						<div
 							key={comment.id}

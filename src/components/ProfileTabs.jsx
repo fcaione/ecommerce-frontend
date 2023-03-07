@@ -3,7 +3,6 @@ import { Tab } from '@headlessui/react'
 
 const ProfileTabs = () => {
 
-
 const tabs = [
   {
     name: 'All',
