@@ -9,6 +9,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import posinggirl from '../images/posinggirl.jpeg'
+import homeIcon from "../images/online-shopping.png"
 
 const Header = () => {
   // (ignore this section) const currencies = ['CAD', 'USD', 'AUD', 'EUR', 'GBP']
@@ -402,7 +403,7 @@ const Header = () => {
                         <span className="sr-only">Ecommerce</span>
                         <img
                           className="h-11 w-auto"
-                          src="https://cdn.discordapp.com/attachments/1080963026993299486/1082704122953879722/box.png"
+                          src={homeIcon}
                           alt=""
                         />
                       </a>
@@ -504,7 +505,7 @@ const Header = () => {
                     {/* Logo (lg-) */}
                     <a href="http://localhost:3000/" className="lg:hidden">
                       <span className="sr-only">Ecommerce</span>
-                      <img src="https://cdn.discordapp.com/attachments/1080963026993299486/1082704122953879722/box.png" alt="" className="h-8 w-auto" />
+                      <img src={homeIcon} alt="" className="h-8 w-auto" />
                     </a>
 
                     <div className="flex flex-1 items-center justify-end">

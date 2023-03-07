@@ -1,4 +1,3 @@
-import posinggirl from '../images/posinggirl.jpeg'
 import { Fragment, useState } from 'react'
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
 import {
@@ -9,6 +8,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import boxGirl from "../images/girl-on-box.png"
 
 const Hero = () => {
   const currencies = ['CAD', 'USD', 'AUD', 'EUR', 'GBP']
@@ -165,7 +165,7 @@ const Hero = () => {
         {/* Decorative image and overlay */}
         <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
           <img
-            src={posinggirl}
+            src={boxGirl}
             alt=""
             className="h-full w-full object-cover object-center"
           />
