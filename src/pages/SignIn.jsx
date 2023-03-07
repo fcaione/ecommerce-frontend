@@ -1,6 +1,6 @@
 import { SignInUser } from "../services/Auth"
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 import Footer from "../components/Footer"
 
 const SignIn = (props) => {
@@ -96,6 +96,7 @@ const SignIn = (props) => {
                     </button>
                   </div>
                 </form>
+                <p className="block text-sm font-medium leading-6 text-gray-900 mt-10">Don't have an account? <Link className="text-indigo-600 hover:text-indigo-500 hover:underline"to="/signup">Create one!</Link></p>
               </div>
             </div>
           </div>

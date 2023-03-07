@@ -1,6 +1,7 @@
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/20/solid'
 import Footer from '../components/Footer'
 import ProfileTabs from '../components/ProfileTabs'
+import SignIn from './SignIn'
 
 const Profile = ({user, listings}) => {
 
@@ -14,7 +15,7 @@ const Profile = ({user, listings}) => {
     
   }
   
-    return (
+    if(user) {return (
       <div>
         <div>
           <img className="h-32 w-full object-cover lg:h-48" src={profile.backgroundImage} alt="" />
@@ -54,7 +55,10 @@ const Profile = ({user, listings}) => {
         <Footer/>
       </div>
       
-    )
+    )}
+    else {
+      return (<SignIn />)
+    }
   }
   
 export default Profile
