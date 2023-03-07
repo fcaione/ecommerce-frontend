@@ -7,6 +7,9 @@ import {
   ShoppingBagIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import posinggirl from '../images/posinggirl.jpeg'
+import homeIcon from "../images/online-shopping.png"
 
 
 
@@ -265,22 +268,22 @@ const Header = ({ user }) => {
             </div>
           </div>
 
-          {/* Secondary navigation */}
-          <div className="bg-white bg-opacity-10 backdrop-blur-md backdrop-filter">
-            <div className="mx-auto px-4 sm:px-6 lg:px-8">
-              <div>
-                <div className="flex h-16 items-center justify-between">
-                  {/* Logo (lg+) */}
-                  <div className="hidden lg:flex lg:flex-1 lg:items-center">
-                    <a href="http://localhost:3000/">
-                      <span className="sr-only">Ecommerce</span>
-                      <img
-                        className="h-11 w-auto"
-                        src="https://cdn.discordapp.com/attachments/1080963026993299486/1082704122953879722/box.png"
-                        alt=""
-                      />
-                    </a>
-                  </div>
+            {/* Secondary navigation */}
+            <div className="bg-white bg-opacity-10 backdrop-blur-md backdrop-filter">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div>
+                  <div className="flex h-16 items-center justify-between">
+                    {/* Logo (lg+) */}
+                    <div className="hidden lg:flex lg:flex-1 lg:items-center">
+                      <a href="http://localhost:3000/">
+                        <span className="sr-only">Ecommerce</span>
+                        <img
+                          className="h-11 w-auto"
+                          src={homeIcon}
+                          alt=""
+                        />
+                      </a>
+                    </div>
 
 
                   <div className="hidden h-full lg:flex">
@@ -371,9 +374,10 @@ const Header = ({ user }) => {
                     <img src="https://cdn.discordapp.com/attachments/1080963026993299486/1082704122953879722/box.png" alt="" className="h-8 w-auto" />
                   </a>
 
-                  <div className="flex flex-1 items-center justify-end">
-                    <a href="#" className="hidden text-sm font-medium text-white lg:block">
-                      Search
+                    {/* Logo (lg-) */}
+                    <a href="http://localhost:3000/" className="lg:hidden">
+                      <span className="sr-only">Ecommerce</span>
+                      <img src={homeIcon} alt="" className="h-8 w-auto" />
                     </a>
 
                     <div className="flex items-center lg:ml-8">
