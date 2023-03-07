@@ -1,30 +1,61 @@
 import Footer from "../components/Footer"
-const AddListingsForm = () => {
+import { useState } from "react"
+import Client from "../services/api"
+import { useNavigate } from "react-router-dom"
+
+const AddListingsForm = ({ user }) => {
+
+  const navigate = useNavigate()
+
+  const [formValues, setFormValues] = useState({
+    name: '',
+    price: '',
+    image: '',
+    description: '',
+    userId: 10
+  })
+  
+
+  const handleChange = (e) => {
+    setFormValues({
+      ...formValues, [e.target.name] : e.target.value
+    })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    await Client.post('/listings', formValues)
+    navigate('/')
+  }
+
+
 
   return (
     <div>
     <div className="flex justify-center">
-    <form className="space-y-14 divide-y divide-gray-200 w-1/2">
+    <form className="space-y-14 divide-y divide-gray-200 w-1/2" onSubmit={handleSubmit}>
       <div className="space-y-8 divide-y divide-gray-200">
         <div className="py-14">
           <div>
-            <h3 className="text-4xl mb-5 font-semibold leading-6 text-gray-900">Forms list</h3>
+            <h3 className="text-4xl mb-5 font-semibold leading-6 text-gray-900">Add your listing</h3>
             <p className="mt-1 text-sm text-gray-500">
-              form list model, freddy what do i doooo.
+              Fill out the information about your item.
             </p>
           </div>
 
           <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
           <div className="sm:col-span-3">
-              <label htmlFor="item-name" className="block text-md font-medium leading-6 text-gray-900">
-                Item Name
+              <label htmlFor="name" className="block text-md font-medium leading-6 text-gray-900">
+                Name
               </label>
               <div className="mt-2">
                 <input
                   type="text"
-                  name="item-name"
-                  id="item-name"
+                  name="name"
+                  id="name"
+                  required
                   autoComplete="given-name"
+                  onChange={handleChange}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -32,56 +63,57 @@ const AddListingsForm = () => {
 
             <div className="sm:col-span-6">
               <label htmlFor="description" className="block text-md font-medium leading-6 text-gray-900">
-                Desription
+                Description
               </label>
               <div className="mt-2">
                 <textarea
-                  id="description"
                   name="description"
-                  rows={3}
-                  className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
-                  defaultValue={''}
+                  id="description"
+                  required
+                  onChange={handleChange}
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
               <p className="mt-2 text-sm text-gray-500">Please Describe the Given Item.</p>
             </div>
 
+            <div className="sm:col-span-6">
+              <label htmlFor="price" className="block text-md font-medium leading-6 text-gray-900">
+                Price
+              </label>
+              <div className="mt-2">
+                <input
+                  type="number"
+                  step="1"
+                  min="0"
+                  name="price"
+                  id="price"
+                  required
+                  onChange= {handleChange}
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+              <p className="mt-2 text-sm text-gray-500">Please Price the Given Item in USD.</p>
+            </div>
+
             
 
             <div className="sm:col-span-6">
-              <label htmlFor="cover-photo" className="block text-md font-medium leading-6 text-gray-900">
-                Image
+              <label htmlFor="image" className="block text-md font-medium leading-6 text-gray-900">
+                Image Address
               </label>
-              <div className="mt-2 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">
-                <div className="space-y-1 text-center">
-                  <svg
-                    className="mx-auto h-12 w-12 text-gray-400"
-                    stroke="currentColor"
-                    fill="none"
-                    viewBox="0 0 48 48"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                      strokeWidth={2}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  <div className="flex text-sm text-gray-600">
-                    <label
-                      htmlFor="file-upload"
-                      className="relative cursor-pointer rounded-md bg-white font-medium text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:text-indigo-500"
-                    >
-                      <span>Upload a file</span>
-                      <input id="file-upload" name="file-upload" type="file" className="sr-only" />
-                    </label>
-                    <p className="pl-1">or drag and drop</p>
-                  </div>
-                  <p className="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
-                </div>
+              <div className="mt-2">
+                <input
+                  type="text"
+                  name="image"
+                  id="image"
+                  required
+                  onChange= {handleChange}
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
               </div>
             </div>
+
           </div>
         </div>
 
@@ -89,10 +121,10 @@ const AddListingsForm = () => {
       <div className="pt-5">
         <div className="flex justify-end mb-5">
           <button
-            type="button"
+            type="reset"
             className="mb-rounded-md bg-white py-2 px-3 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
           >
-            Cancel
+            Reset
           </button>
           <button
             type="submit"
