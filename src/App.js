@@ -11,6 +11,7 @@ import Listings from "./pages/Listings";
 import Header from "./components/Header";
 import { CheckSession } from "./services/Auth";
 import Client from "./services/api";
+import AddListingsForm from "./pages/AddListingsForm";
 
 function App() {
 
@@ -51,6 +52,7 @@ function App() {
           <Route path="/checkout" element={<CheckoutForm />} />
           <Route path="/signIn" element={<SignIn setUser={setUser} />} />
           <Route path="/signUp" element={<SignUp />} />
+          <Route path="/addListingsForm" element={<AddListingsForm />} />
         </Routes>
     </>
   );
