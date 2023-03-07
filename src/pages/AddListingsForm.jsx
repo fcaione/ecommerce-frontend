@@ -16,7 +16,7 @@ const AddListingsForm = () => {
           <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
           <div className="sm:col-span-3">
               <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900">
-                First name
+                Name
               </label>
               <div className="mt-2">
                 <input
@@ -45,24 +45,7 @@ const AddListingsForm = () => {
               <p className="mt-2 text-sm text-gray-500">Write a few sentences about yourself.</p>
             </div>
 
-            <div className="sm:col-span-6">
-              <label htmlFor="photo" className="block text-sm font-medium leading-6 text-gray-900">
-                Photo
-              </label>
-              <div className="mt-2 flex items-center">
-                <span className="h-12 w-12 overflow-hidden rounded-full bg-gray-100">
-                  <svg className="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
-                </span>
-                <button
-                  type="button"
-                  className="ml-5 rounded-md bg-white py-1.5 px-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-                >
-                  Change
-                </button>
-              </div>
-            </div>
+            
 
             <div className="sm:col-span-6">
               <label htmlFor="cover-photo" className="block text-sm font-medium leading-6 text-gray-900">

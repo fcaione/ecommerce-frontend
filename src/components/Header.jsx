@@ -402,7 +402,7 @@ const Header = () => {
                         <span className="sr-only">Ecommerce</span>
                         <img
                           className="h-11 w-auto"
-                          src="https://cdn-user-icons.flaticon.com/95365/95365319/1678081629776.svg?token=exp=1678082530~hmac=e6624b59db24810edf1cef285b4774aa"
+                          src="https://cdn.discordapp.com/attachments/1080963026993299486/1082704122953879722/box.png"
                           alt=""
                         />
                       </a>
@@ -504,7 +504,7 @@ const Header = () => {
                     {/* Logo (lg-) */}
                     <a href="http://localhost:3000/" className="lg:hidden">
                       <span className="sr-only">Ecommerce</span>
-                      <img src="https://cdn-user-icons.flaticon.com/95365/95365319/1678081629776.svg?token=exp=1678082530~hmac=e6624b59db24810edf1cef285b4774aa" alt="" className="h-8 w-auto" />
+                      <img src="https://cdn.discordapp.com/attachments/1080963026993299486/1082704122953879722/box.png" alt="" className="h-8 w-auto" />
                     </a>
 
                     <div className="flex flex-1 items-center justify-end">
