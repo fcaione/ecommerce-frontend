@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { RegisterUser } from "../services/Auth"
+import Footer from "../components/Footer"
 
 const SignUp = () => {
 	const navigate = useNavigate()
@@ -31,7 +32,8 @@ const SignUp = () => {
 	}
 
 	return (
-		<div className="flex min-h-full">
+    <>
+		<div className="flex min-h-screen">
 			<div className="flex flex-1 flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
 				<div className="mx-auto w-full max-w-sm lg:w-96">
 					<div>
@@ -132,6 +134,8 @@ const SignUp = () => {
 				/>
 			</div>
 		</div>
+    <Footer/>
+    </>
 	)
 }
 

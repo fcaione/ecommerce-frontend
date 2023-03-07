@@ -14,7 +14,9 @@ import Comments from "../components/Comments"
 const ToggleEditListing = ({ selectedListing, user, setToggleEditing, getListing }) => {
 
     const navigate = useNavigate()
+
     let { listingId } = useParams()
+    
 	const [formValues, setFormValues] = useState({
 		name: selectedListing.name,
 		price: selectedListing.price,

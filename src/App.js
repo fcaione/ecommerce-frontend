@@ -42,7 +42,7 @@ function App() {
 
   return (
     <>
-      <Header/>
+      <Header user={user}/>
         <Routes>
           <Route path="/" element={<Home  listings={listings}/> } />
           <Route path="/about" element={<About />} />

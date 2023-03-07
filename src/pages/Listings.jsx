@@ -1,4 +1,5 @@
 import ListCard from "../components/ListCard"
+
 const Listings = ({ listings }) => {
       return (
         <div className="bg-white">
@@ -12,4 +13,5 @@ const Listings = ({ listings }) => {
         </div>
       )
     }
+    
 export default Listings
