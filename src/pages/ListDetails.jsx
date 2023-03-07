@@ -220,7 +220,7 @@ const ListDetails = ({ user }) => {
 					</div>
 				</div>
 			</div>
-			<Comments comments={selectedListing.comments} />
+			<Comments comments={selectedListing.comments} user={user} getListing={getListing}/>
 		</>
 	)
 }
