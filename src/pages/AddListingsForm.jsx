@@ -4,7 +4,7 @@ import Client from "../services/api"
 import { useNavigate } from "react-router-dom"
 import Checkbox from "../components/Checkbox"
 
-const AddListingsForm = ({ user }) => {
+const AddListingsForm = ({ user, getAllListings }) => {
 
   const navigate = useNavigate()
 
@@ -145,7 +145,10 @@ const AddListingsForm = ({ user }) => {
                   Next
                 </button> :
                 <button
-                  onClick={() => navigate('/')} className="ml-3 inline-flex justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  onClick={() => {
+                    getAllListings()
+                    navigate('/')
+                  }} className="ml-3 inline-flex justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Done
                 </button>
