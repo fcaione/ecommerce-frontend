@@ -10,7 +10,7 @@ import {
 import Client from "../services/api"
 import { useParams } from "react-router-dom"
 import Comments from "../components/Comments"
-import ToggleEditListing from "../components/ToggleEditListing"
+import EditListingForm from "../components/EditListingForm"
 import { Link, useNavigate } from "react-router-dom"
 
 const ListDetails = ({ user }) => {
@@ -27,6 +27,7 @@ const ListDetails = ({ user }) => {
 
 	const getListing = async () => {
 		const res = await Client.get(`/listings/${listingId}`)
+		console.log(res.data)
 		setSelectedListing(res.data)
 	}
 
@@ -39,14 +40,7 @@ const ListDetails = ({ user }) => {
 		navigate("/listings")
 	}
 
-	return toggleEditing ? (
-		<ToggleEditListing
-			selectedListing={selectedListing}
-			user={user}
-			setToggleEditing={setToggleEditing}
-			getListing={getListing}
-		/>
-	) : (
+	return (
 		<>
 			<div className="bg-white">
 				<div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -61,26 +55,33 @@ const ListDetails = ({ user }) => {
 						</div>
 
 						{/* Product info */}
-						<div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
-							<h1 className="text-3xl font-bold tracking-tight text-gray-900">
-								{selectedListing.name}
-							</h1>
-							<div className="mt-3">
-								<h2 className="sr-only">Product information</h2>
-								<p className="text-3xl tracking-tight text-gray-900">
-									${selectedListing.price}
-								</p>
-							</div>
-							<div className="mt-6">
-								<h3 className="sr-only">Description</h3>
 
-								<div
-									className="space-y-6 text-base text-gray-700"
-									dangerouslySetInnerHTML={{
-										__html: selectedListing.description,
-									}}
-								/>
-							</div>
+						<div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
+							{!toggleEditing && (
+								<>
+									<h1 className="text-3xl font-bold tracking-tight text-gray-900">
+										{selectedListing.name}
+									</h1>
+									<div className="mt-3">
+										<h2 className="sr-only">
+											Product information
+										</h2>
+										<p className="text-3xl tracking-tight text-gray-900">
+											${selectedListing.price}
+										</p>
+									</div>
+									<div className="mt-6">
+										<h3 className="sr-only">Description</h3>
+
+										<div
+											className="space-y-6 text-base text-gray-700"
+											dangerouslySetInnerHTML={{
+												__html: selectedListing.description,
+											}}
+										/>
+									</div>
+								</>
+							)}
 
 							{/* {profile link} */}
 							<Link to={`/profile/${selectedListing.owner?.id}`}>
@@ -106,6 +107,15 @@ const ListDetails = ({ user }) => {
 									</div>
 								</div>
 							</Link>
+
+							{toggleEditing && (
+								<EditListingForm
+									selectedListing={selectedListing}
+									user={user}
+									setToggleEditing={setToggleEditing}
+									getListing={getListing}
+								/>
+							)}
 
 							{/* {buttons} */}
 							<form className="mt-6">
@@ -135,12 +145,14 @@ const ListDetails = ({ user }) => {
 											)}
 
 										{user?.id ===
-											selectedListing.owner?.id && (
+											selectedListing.owner?.id && !toggleEditing && (
 											<button
 												type="submit"
 												className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-gray-600 py-3 px-8 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full mt-5"
-												onClick={() =>
+												onClick={(e) =>{
+													e.preventDefault()
 													setToggleEditing(true)
+												}
 												}
 											>
 												Edit Listing
@@ -181,7 +193,11 @@ const ListDetails = ({ user }) => {
 					</div>
 				</div>
 			</div>
-			<Comments comments={selectedListing.comments} user={user} getListing={getListing}/>
+			<Comments
+				comments={selectedListing.comments}
+				user={user}
+				getListing={getListing}
+			/>
 		</>
 	)
 }
