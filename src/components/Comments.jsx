@@ -8,26 +8,29 @@ const Comments = (props) => {
 		return classes.filter(Boolean).join(" ")
 	}
 
-    let { listingId } = useParams()
+	let { listingId } = useParams()
 
 	const [toggleAddingComment, setToggleAddingComment] = useState(false)
 
 	const [formValues, setFormValues] = useState({
 		content: "",
-        listingId,
-        userId: props.user?.id
+		listingId,
+		userId: props.user?.id,
 	})
 
 	const handleChange = (e) => {
 		setFormValues({ ...formValues, [e.target.name]: e.target.value })
 	}
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        const res = await Client.post(`/comments/${listingId}/${props.user.id}`, formValues)
-        setFormValues({ content: ""})
-        props.getListing()
-      }
+	const handleSubmit = async (e) => {
+		e.preventDefault()
+		const res = await Client.post(
+			`/comments/${listingId}/${props.user?.id}`,
+			formValues
+		)
+		setFormValues({ content: "" })
+		props.getListing()
+	}
 
 	return (
 		<div className="bg-white">
@@ -42,33 +45,9 @@ const Comments = (props) => {
 							className="pt-10 lg:grid lg:grid-cols-12 lg:gap-x-8"
 						>
 							<div className="lg:col-span-8 lg:col-start-5 xl:col-span-9 xl:col-start-4 xl:grid xl:grid-cols-3 xl:items-start xl:gap-x-8">
-								<div className="flex items-center xl:col-span-1">
-									<div className="flex items-center">
-										{[0, 1, 2, 3, 4].map((rating) => (
-											<StarIcon
-												key={rating}
-												className={classNames(
-													comment.rating > rating
-														? "text-yellow-400"
-														: "text-gray-200",
-													"h-5 w-5 flex-shrink-0"
-												)}
-												aria-hidden="true"
-											/>
-										))}
-									</div>
-									<p className="ml-3 text-sm text-gray-700">
-										{comment.rating}
-										<span className="sr-only">
-											{" "}
-											out of 5 stars
-										</span>
-									</p>
-								</div>
-
 								<div className="mt-4 lg:mt-6 xl:col-span-2 xl:mt-0">
 									<h3 className="text-sm font-medium text-gray-900">
-										{comment.title}
+										{comment.userId}
 									</h3>
 
 									<div
@@ -113,7 +92,7 @@ const Comments = (props) => {
 							name="content"
 							id="content"
 							value={formValues.content}
-                            onChange={handleChange}
+							onChange={handleChange}
 						/>
 						<button
 							className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-gray-600 py-3 px-8 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full mt-5"

@@ -11,6 +11,7 @@ import Client from "../services/api"
 import { useParams } from "react-router-dom"
 import Comments from "../components/Comments"
 import ToggleEditListing from "../components/ToggleEditListing"
+import { Link } from "react-router-dom"
 
 const ListDetails = ({ user }) => {
 	function classNames(...classes) {
@@ -26,6 +27,7 @@ const ListDetails = ({ user }) => {
 
 	const getListing = async () => {
 		const res = await Client.get(`/listings/${listingId}`)
+		console.log(res)
 		setSelectedListing(res.data)
 	}
 
@@ -63,39 +65,12 @@ const ListDetails = ({ user }) => {
 							<h1 className="text-3xl font-bold tracking-tight text-gray-900">
 								{selectedListing.name}
 							</h1>
-
 							<div className="mt-3">
 								<h2 className="sr-only">Product information</h2>
 								<p className="text-3xl tracking-tight text-gray-900">
 									${selectedListing.price}
 								</p>
 							</div>
-
-							{/* Reviews */}
-							<div className="mt-3">
-								<h3 className="sr-only">Reviews</h3>
-								<div className="flex items-center">
-									<div className="flex items-center">
-										{[0, 1, 2, 3, 4].map((rating) => (
-											<StarIcon
-												key={rating}
-												className={classNames(
-													selectedListing.rating >
-														rating
-														? "text-indigo-500"
-														: "text-gray-300",
-													"h-5 w-5 flex-shrink-0"
-												)}
-												aria-hidden="true"
-											/>
-										))}
-									</div>
-									<p className="sr-only">
-										{selectedListing.rating} out of 5 stars
-									</p>
-								</div>
-							</div>
-
 							<div className="mt-6">
 								<h3 className="sr-only">Description</h3>
 
@@ -106,13 +81,34 @@ const ListDetails = ({ user }) => {
 									}}
 								/>
 							</div>
+							{/* {profile link} */}
 
+							<Link to={`/profile/${selectedListing.owner?.id}`}>
+								<div className="flex mt-6">
+									<div className="mr-4 flex-shrink-0 self-center">
+										<img
+											className="h-16 w-16 border border-gray-300 bg-white text-gray-300"
+											src={
+												selectedListing.owner
+													?.profileImage
+											}
+										/>
+									</div>
+									<div>
+										<h4 className="text-lg font-bold">
+											{selectedListing.owner?.name}
+										</h4>
+										<p className="mt-1">
+											Click here to link to{" "}
+											{selectedListing.owner?.name}'s
+											profile
+										</p>
+									</div>
+								</div>
+							</Link>
+
+							{/* {buttons} */}
 							<form className="mt-6">
-								{/* Colors */}
-								{/* <div>
-                <h3 className="text-sm text-gray-600">Color</h3>
-              </div> */}
-
 								<div className="sm:flex-col1 mt-10 flex">
 									<div className="sm:flex-col1 mt-10 flex-col">
 										{user?.id !==
@@ -181,7 +177,6 @@ const ListDetails = ({ user }) => {
 									)}
 								</div>
 							</form>
-
 							<section
 								aria-labelledby="details-heading"
 								className="mt-12"
@@ -234,7 +229,7 @@ const ListDetails = ({ user }) => {
 					</div>
 				</div>
 			</div>
-			<Comments comments={selectedListing.comments} />
+			<Comments comments={selectedListing.comments} user={user} />
 		</>
 	)
 }
