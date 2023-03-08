@@ -21,6 +21,7 @@ const tabs = [
                 name={listing.name}
                 color={listing.color}
                 price={listing.price}
+                userId={listing.userId}
                 getAllListings={getAllListings}  
                 user={user}
                 />

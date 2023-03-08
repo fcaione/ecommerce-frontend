@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import Client from "../services/api"
 
 
-const ListCard = ({ id, name, image, color, price, getAllListings, user }) => {
+const ListCard = ({ id, name, image, color, price, getAllListings, user, userId }) => {
 
 	const handleDelete = async (id) => {
 		await Client.delete(`/listings/${id}`)
@@ -33,7 +33,7 @@ const ListCard = ({ id, name, image, color, price, getAllListings, user }) => {
 					</p>
 				</Link>
 			</div>
-			{user?.id === id && (
+			{user?.id === userId && (
 			<button onClick={() => handleDelete(id)}>
 				Delete
 			</button>
