@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import { Tab } from '@headlessui/react'
 import ListCard from './ListCard'
 
-const ProfileTabs = ({listings, getAllListings, user}) => {
+const ProfileTabs = ({user, listings, getAllListings}) => {
 
 const tabs = [
   {
@@ -10,12 +10,15 @@ const tabs = [
     features: [
       {
         
-        description:
+        content:
         <div className="bg-white">
           <div className="mx-auto max-w-7xl mb-9 overflow-hidden px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-6 lg:gap-x-8">
-              {listings.map((listing, index) => (
-                <ListCard key={index}
+
+              {listings.map((listing, index) => {
+                if(listing.userId === user.id){
+                  return(
+                <ListCard key={index} 
                 id={listing.id}
                 image={listing.image}
                 name={listing.name}
@@ -37,12 +40,26 @@ const tabs = [
     name: 'Selling',
     features: [
       {
-        name: 'Natural wood options',
-        description:
-          'Organize has options for rich walnut and bright maple base materials. Accent your desk with a contrasting material, or match similar woods for a calm and cohesive look. Every base is hand sanded and finished.',
-        imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-06-detail-02.jpg',
-        imageAlt:
-          'Walnut organizer base with pen, sticky note, phone, and bin trays, next to modular drink coaster attachment.',
+        content:
+        <div className="bg-white">
+          <div className="mx-auto max-w-7xl mb-9 overflow-hidden px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-6 lg:gap-x-8">
+              {listings.map((listing, index) => {
+                if(listing.userId === user.id && listing.soldOut === false){
+                  return(
+                <ListCard key={index} 
+                id={listing.id}
+                image={listing.image}
+                name={listing.name}
+                color={listing.color}
+                price={listing.price}
+                getAllListings={getAllListings}  
+                />)
+                }
+              })}
+            </div>
+          </div>
+        </div>
       },
     ],
   },
@@ -50,11 +67,26 @@ const tabs = [
     name: 'Sold',
     features: [
       {
-        name: 'Helpful around the home',
-        description:
-          "Our customers use Organize throughout the house to bring efficiency to many daily routines. Enjoy Organize in your workspace, kitchen, living room, entry way, garage, and more. We can't wait to see how you'll use it!",
-        imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-06-detail-03.jpg',
-        imageAlt: 'Walnut organizer base with white polycarbonate trays in the kitchen with various kitchen utensils.',
+        content:
+        <div className="bg-white">
+        <div className="mx-auto max-w-7xl mb-9 overflow-hidden px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-6 lg:gap-x-8">
+            {listings.map((listing, index) => {
+              if(listing.userId === user.id && listing.soldOut === true){
+                return(
+              <ListCard key={index} 
+              id={listing.id}
+              image={listing.image}
+              name={listing.name}
+              color={listing.color}
+              price={listing.price}
+              getAllListings={getAllListings}  
+              />)
+              }
+            })}
+          </div>
+        </div>
+      </div>
       },
     ],
   },
@@ -63,7 +95,7 @@ const tabs = [
     features: [
       {
         name: "Everything you'll need",
-        description:
+        content:
           'The Organize base set includes the pen, phone, small, and large trays to help you group all your essential items. Expand your set with the drink coaster and headphone stand add-ons.',
         imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-06-detail-04.jpg',
         imageAlt: 'Walnut organizer system on black leather desk mat on top of white desk.',
@@ -114,7 +146,7 @@ function classNames(...classes) {
                   {tab.features.map((feature) => (
                     <div key={feature.name} className="flex flex-col-reverse lg:grid  lg:gap-x-8">
                       <div className="mt-6 lg:col-span-5 lg:mt-0">
-                        <p className="mt-2 text-sm text-gray-500">{feature.description}</p>
+                        {feature.content}
                       </div>
                     </div>
                   ))}
