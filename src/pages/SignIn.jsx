@@ -25,7 +25,7 @@ const SignIn = (props) => {
   }
 
   const guestSignIn = async (e) => {
-    
+    const payload = await SignInUser()
   }
 
 
