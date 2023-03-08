@@ -22,14 +22,11 @@ const ListDetails = ({ user }) => {
 
 	let navigate = useNavigate()
 
-	// const [selectedColor, setSelectedColor] = useState(product.colors[0])
-
 	const [selectedListing, setSelectedListing] = useState({})
 	const [toggleEditing, setToggleEditing] = useState(false)
 
 	const getListing = async () => {
 		const res = await Client.get(`/listings/${listingId}`)
-		console.log(res)
 		setSelectedListing(res.data)
 	}
 
@@ -84,8 +81,8 @@ const ListDetails = ({ user }) => {
 									}}
 								/>
 							</div>
-							{/* {profile link} */}
 
+							{/* {profile link} */}
 							<Link to={`/profile/${selectedListing.owner?.id}`}>
 								<div className="flex mt-6">
 									<div className="mr-4 flex-shrink-0 self-center">
@@ -119,7 +116,7 @@ const ListDetails = ({ user }) => {
 											selectedListing.soldOut ===
 												false && (
 												<button
-													type="submit"
+													type="button"
 													className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
 												>
 													Add to bag
@@ -130,7 +127,7 @@ const ListDetails = ({ user }) => {
 											selectedListing.soldOut ===
 												true && (
 												<button
-													type="submit"
+													type="button"
 													className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-red-600 py-3 px-8 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
 												>
 													SOLD OUT
@@ -180,54 +177,6 @@ const ListDetails = ({ user }) => {
 									)}
 								</div>
 							</form>
-							<section
-								aria-labelledby="details-heading"
-								className="mt-12"
-							>
-								<h2 id="details-heading" className="sr-only">
-									Additional details
-								</h2>
-
-								{/* <div className="divide-y divide-gray-200 border-t">
-                {selectedListing.details.map((detail) => (
-                  <Disclosure as="div" key={detail.name}>
-                    {({ open }) => (
-                      <>
-                        <h3>
-                          <Disclosure.Button className="group relative flex w-full items-center justify-between py-6 text-left">
-                            <span
-                              className={classNames(open ? 'text-indigo-600' : 'text-gray-900', 'text-sm font-medium')}
-                            >
-                            
-                            </span>
-                            <span className="ml-6 flex items-center">
-                              {open ? (
-                                <MinusIcon
-                                  className="block h-6 w-6 text-indigo-400 group-hover:text-indigo-500"
-                                  aria-hidden="true"
-                                />
-                              ) : (
-                                <PlusIcon
-                                  className="block h-6 w-6 text-gray-400 group-hover:text-gray-500"
-                                  aria-hidden="true"
-                                />
-                              )}
-                            </span>
-                          </Disclosure.Button>
-                        </h3>
-                        <Disclosure.Panel as="div" className="prose prose-sm pb-6">
-                          <ul role="list">
-                            {detail.items.map((item) => (
-                              <li key={item}>{item}</li>
-                            ))}
-                          </ul>
-                        </Disclosure.Panel>
-                      </>
-                    )}
-                  </Disclosure>
-                ))}
-              </div> */}
-							</section>
 						</div>
 					</div>
 				</div>

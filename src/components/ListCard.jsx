@@ -9,9 +9,6 @@ const ListCard = ({ id, name, image, color, price, getAllListings, user, userId 
 		getAllListings()
 	}
 
-	console.log(id)
-	console.log(user?.id)
-
 	return (
 		<div>
 			<div key={id} className="group relative">
@@ -33,11 +30,11 @@ const ListCard = ({ id, name, image, color, price, getAllListings, user, userId 
 					</p>
 				</Link>
 			</div>
-			{user?.id === userId && (
+			{/* {user?.id === userId && (
 			<button onClick={() => handleDelete(id)}>
 				Delete
 			</button>
-			)}
+			)} */}
 		</div>
 	)
 }
