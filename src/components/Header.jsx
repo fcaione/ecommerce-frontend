@@ -1,5 +1,7 @@
-import { Fragment, useState } from 'react'
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
+import homeIcon from "../images/online-shopping.png"
+import { useNavigate, Link } from 'react-router-dom'
+import { Fragment, useState } from 'react'
 import {
   Bars3Icon,
   MagnifyingGlassIcon,
@@ -7,14 +9,10 @@ import {
   ShoppingBagIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
-import homeIcon from "../images/online-shopping.png"
-import { useNavigate, Link } from 'react-router-dom'
-
-
-
+import { ReactSearchAutocomplete } from "react-search-autocomplete"
+import data from '../data/data'
 
 const Header = ({ user, setUser }) => {
-  
   const navigate = useNavigate()
 
   const navigation = {
@@ -142,8 +140,6 @@ const Header = ({ user, setUser }) => {
     return classes.filter(Boolean).join(' ')
   }
 
-
-
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const signOut = () => {
@@ -152,6 +148,19 @@ const Header = ({ user, setUser }) => {
     navigate('/')
   }
 
+  const handleOnSelect = async (item) => {
+    navigate(`/listings/tag/${item.name}`)
+  }
+
+  const formatResult = (item) => {
+    return (
+      <>
+        <span className="text-black">
+          {item.name}
+        </span>
+      </>
+    )
+  }
 
   return (
     <>
@@ -281,11 +290,12 @@ const Header = ({ user, setUser }) => {
 
           {/* Secondary navigation */}
           <div className="bg-white bg-opacity-10 backdrop-blur-md backdrop-filter">
-            <div className="mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto px-4 sm:px-6 lg:px-8 ">
               <div>
-                <div className="flex h-16 items-center justify-between">
+                <div className="flex h-16 items-center justify-between ">
                   {/* Logo (lg+) */}
                   <div className="hidden lg:flex lg:flex-1 lg:items-center">
+                    
                     <Link to="/">
                       <span className="sr-only">Ecommerce</span>
                       <img
@@ -295,6 +305,8 @@ const Header = ({ user, setUser }) => {
                       />
                     </Link>
                   </div>
+
+                  
 
 
                   <div className="hidden h-full lg:flex">
@@ -373,10 +385,6 @@ const Header = ({ user, setUser }) => {
                     </button>
 
                     {/* Search */}
-                    <a href="#" className="ml-2 p-2 text-white">
-                      <span className="sr-only">Search</span>
-                      <MagnifyingGlassIcon className="h-6 w-6" aria-hidden="true" />
-                    </a>
                   </div>
 
                   {/* Logo (lg-) */}
@@ -385,11 +393,26 @@ const Header = ({ user, setUser }) => {
                     <img src={homeIcon} alt="" className="h-8 w-auto" />
                   </a>
 
-                  <div className="flex flex-1 items-center justify-end">
-                    <a href="#" className="hidden text-sm font-medium text-white lg:block">
-                      Search
-                    </a>
+                  
 
+                  <div className="flex flex-1 items-center justify-end">
+                    <div className="flex items-center lg:ml-8 ">
+                      <div className='w-full flex justify-center'>
+                        <div className='w-60'>
+                          <ReactSearchAutocomplete
+                            items={data}
+                            onSelect={handleOnSelect}
+                            formatResult={formatResult}
+                            styling={{
+                              width: '50px',
+                              zIndex: 4,
+                              color: 'black'
+                            }}
+                            placeholder="Search"
+                          />
+                        </div>
+                        </div>
+                    </div>
                     <div className="flex items-center lg:ml-8">
                       {/* Help */}
                       <Link to="/about" className="p-2 text-white lg:hidden">

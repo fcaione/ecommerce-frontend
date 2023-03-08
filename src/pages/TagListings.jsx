@@ -17,7 +17,9 @@ const TagListings = () => {
 
   useEffect(() => {
     getTagListings()
-  },[])
+  },[tagName])
+
+  console.log("HOI YAAAAA")
   
       return tagListings && (
         <div className="bg-white">
