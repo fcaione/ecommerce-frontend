@@ -2,16 +2,15 @@ import { Link } from "react-router-dom"
 import Client from "../services/api"
 
 
-const ListCard = ({ id, name, image, color, price, getAllListings }) => {
-
-
+const ListCard = ({ id, name, image, color, price, getAllListings, user, userId }) => {
 
 	const handleDelete = async (id) => {
 		await Client.delete(`/listings/${id}`)
 		getAllListings()
 	}
 
-	
+	console.log(id)
+	console.log(user?.id)
 
 	return (
 		<div>
@@ -34,9 +33,11 @@ const ListCard = ({ id, name, image, color, price, getAllListings }) => {
 					</p>
 				</Link>
 			</div>
+			{user?.id === userId && (
 			<button onClick={() => handleDelete(id)}>
 				Delete
 			</button>
+			)}
 		</div>
 	)
 }
