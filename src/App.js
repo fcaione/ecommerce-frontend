@@ -12,6 +12,7 @@ import Header from "./components/Header"
 import { CheckSession } from "./services/Auth"
 import Client from "./services/api"
 import AddListingsForm from "./pages/AddListingsForm"
+import TagListings from "./pages/TagListings"
 
 function App() {
 
@@ -50,8 +51,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/profile/:userId" element={<Profile user={user} listings={listings} getAllListings={getAllListings}/>} />
           <Route path="/listings" element={<Listings listings={listings} getAllListings={getAllListings}/>} />
-          <Route path="/listings/:tagName" element={<Listings />} />
-          <Route path="/listings/:listingId" element={<ListDetails user={user} />} />
+          <Route path="/listings/:listingId" element={<Listings />} />
+          <Route path="/listings/tag/:tagName" element={<TagListings user={user} />} />
           <Route path="/checkout" element={<CheckoutForm />} />
           <Route path="/signIn" element={<SignIn setUser={setUser} />} />
           <Route path="/signUp" element={<SignUp />} />
