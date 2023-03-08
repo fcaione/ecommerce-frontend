@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import { Tab } from '@headlessui/react'
 import ListCard from './ListCard'
 
-const ProfileTabs = ({listings}) => {
+const ProfileTabs = ({listings, getAllListings}) => {
 
 const tabs = [
   {
@@ -12,10 +12,17 @@ const tabs = [
         
         description:
         <div className="bg-white">
-          <div className="mx-auto max-w-7xl overflow-hidden px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl mb-9 overflow-hidden px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-6 lg:gap-x-8">
-              {listings.map((listing) => (
-                <ListCard {...listing}/>
+              {listings.map((listing, index) => (
+                <ListCard key={index} 
+                id={listing.id}
+                image={listing.image}
+                name={listing.name}
+                color={listing.color}
+                price={listing.price}
+                getAllListings={getAllListings}  
+                />
               ))}
             </div>
           </div>

@@ -3,8 +3,8 @@ import Footer from '../components/Footer'
 import ProfileTabs from '../components/ProfileTabs'
 import SignIn from './SignIn'
 
-const Profile = ({user, listings}) => {
-
+const Profile = ({user, listings, getAllListings}) => {
+console.log(listings)
   const profile = {
     name: user?.name,
     email: user?.email,
@@ -51,7 +51,7 @@ const Profile = ({user, listings}) => {
             <h1 className="truncate text-2xl font-bold text-gray-900">{profile.name}</h1>
           </div>
         </div>
-        <ProfileTabs listings={listings} />
+        <ProfileTabs listings={listings} getAllListings={getAllListings} />
         <Footer/>
       </div>
       
