@@ -22,6 +22,7 @@ const ToggleEditListing = ({ selectedListing, user, setToggleEditing, getListing
 		price: selectedListing.price,
 		soldOut: selectedListing.soldOut,
         image: selectedListing.image,
+		description: selectedListing.description,
         userId: user?.id
 	})
 
@@ -36,11 +37,11 @@ const ToggleEditListing = ({ selectedListing, user, setToggleEditing, getListing
             name: "",
             price: "",
             soldOut: "",
+			description: "",
             image: ""
 		})
         setToggleEditing(false)
         getListing()
-		// navigate("/signin")
 	}
 
     return (
@@ -67,19 +68,16 @@ const ToggleEditListing = ({ selectedListing, user, setToggleEditing, getListing
 							<div className="mt-3">
 								<h2 className="sr-only">Product information</h2>
 								<p className="text-3xl tracking-tight text-gray-900">
-                                    <input type="text" id="name" value={formValues.price} onChange={handleChange}/>
+                                    <input type="text" name="price" id="price" value={formValues.price} onChange={handleChange}/>
 								</p>
 							</div>
 
 
 							<div className="mt-6">
 								<h3 className="sr-only">Description</h3>
-
+								<input type="text" name="description" id="description" value={formValues.description} onChange={handleChange}/>
 								<div
 									className="space-y-6 text-base text-gray-700"
-									dangerouslySetInnerHTML={{
-										__html: selectedListing.description,
-									}}
 								/>
 							</div>
 
@@ -116,7 +114,7 @@ const ToggleEditListing = ({ selectedListing, user, setToggleEditing, getListing
 				</div>
 			</div>
 		</form>
-		<Comments comments={selectedListing.comments} />
+		<Comments comments={selectedListing.comments} user={user}/>
 	</>
     )
 }
