@@ -99,7 +99,7 @@ const ListDetails = ({ user }) => {
 											{selectedListing.owner?.name}
 										</h4>
 										<p className="mt-1">
-											Click here to link to{" "}
+											Click here to go to{" "}
 											{selectedListing.owner?.name}'s
 											profile
 										</p>
