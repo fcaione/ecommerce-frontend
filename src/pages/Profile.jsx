@@ -4,7 +4,6 @@ import ProfileTabs from '../components/ProfileTabs'
 import SignIn from './SignIn'
 
 const Profile = ({user, listings, getAllListings}) => {
-console.log(listings)
   const profile = {
     name: user?.name,
     email: user?.email,
@@ -51,7 +50,7 @@ console.log(listings)
             <h1 className="truncate text-2xl font-bold text-gray-900">{profile.name}</h1>
           </div>
         </div>
-        <ProfileTabs listings={listings} getAllListings={getAllListings} />
+        <ProfileTabs listings={listings} getAllListings={getAllListings} user={user} />
         <Footer/>
       </div>
       
