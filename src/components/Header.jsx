@@ -8,7 +8,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import homeIcon from "../images/online-shopping.png"
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 
 
 
@@ -257,20 +257,20 @@ const Header = ({ user, setUser }) => {
             <div className="mx-auto flex h-10 items-center justify-end px-4 sm:px-6 lg:px-8">
           {!user ?
               <div className="flex items-center space-x-6">
-                <a href="http://localhost:3000/signin" className="text-sm font-medium text-white hover:text-gray-100">
+                <Link to="/signin" className="text-sm font-medium text-white hover:text-gray-100">
                   Sign in
-                </a>
-                <a href="http://localhost:3000/signup" className="text-sm font-medium text-white hover:text-gray-100">
+                </Link>
+                <Link to="/signup" className="text-sm font-medium text-white hover:text-gray-100">
                   Create an account
-                </a>
+                </Link>
               </div> :
               <div className="flex items-center space-x-6">
-              <a href="http://localhost:3000/profile" className="text-sm font-medium text-white hover:text-gray-100">
+              <button onClick={() => {navigate(`profile/${user.id}`)}} className="text-sm font-medium text-white hover:text-gray-100">
                   Profile 
-                </a>
-              <a href="http://localhost:3000/addListingsForm" className="text-sm font-medium text-white hover:text-gray-100">
+                </button>
+              <Link to="/addListingsForm" className="text-sm font-medium text-white hover:text-gray-100">
                   Add Listing
-                </a>
+                </Link>
               <button onClick={() => signOut()} className="text-sm font-medium text-white hover:text-gray-100">
                   Sign Out
                 </button>
@@ -286,14 +286,14 @@ const Header = ({ user, setUser }) => {
                 <div className="flex h-16 items-center justify-between">
                   {/* Logo (lg+) */}
                   <div className="hidden lg:flex lg:flex-1 lg:items-center">
-                    <a href="http://localhost:3000/">
+                    <Link to="/">
                       <span className="sr-only">Ecommerce</span>
                       <img
                         className="h-11 w-auto"
                         src={homeIcon}
                         alt=""
                       />
-                    </a>
+                    </Link>
                   </div>
 
 
@@ -392,13 +392,13 @@ const Header = ({ user, setUser }) => {
 
                     <div className="flex items-center lg:ml-8">
                       {/* Help */}
-                      <a href="http://localhost:3000/about" className="p-2 text-white lg:hidden">
+                      <Link to="/about" className="p-2 text-white lg:hidden">
                         <span className="sr-only">About</span>
                         <QuestionMarkCircleIcon className="h-6 w-6" aria-hidden="true" />
-                      </a>
-                      <a href="http://localhost:3000/about" className="hidden text-sm font-medium text-white lg:block">
+                      </Link>
+                      <Link to="/about" className="hidden text-sm font-medium text-white lg:block">
                         About
-                      </a>
+                      </Link>
 
                       {/* Cart */}
                       <div className="ml-4 flow-root lg:ml-8">

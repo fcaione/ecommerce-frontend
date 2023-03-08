@@ -2,19 +2,35 @@ import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/20/solid'
 import Footer from '../components/Footer'
 import ProfileTabs from '../components/ProfileTabs'
 import SignIn from './SignIn'
+import Client from '../services/api'
+import { useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
-const Profile = ({user, listings, getAllListings}) => {
-console.log(listings)
+const Profile = ({ listings, getAllListings }) => {
+  
+  const [user, setUser] = useState(null)
+  
+  const { userId } = useParams()
+
+  const getUser = async () => {
+    const res = await Client.get(`/users/user/${userId}`)
+    setUser(res.data)
+  }
+
+  useEffect(() => {
+    getUser()
+  }, [])
+  
+  
   const profile = {
     name: user?.name,
     email: user?.email,
     profileImage: user?.profileImage,
     backgroundImage: user?.backgroundImage
-    }
+  }
 
-  
-  
-    if(user) {return (
+  if (user) {
+    return (
       <div>
         <div>
           <img className="h-32 w-full object-cover lg:h-48" src={profile.backgroundImage} alt="" />
@@ -51,13 +67,14 @@ console.log(listings)
           </div>
         </div>
         <ProfileTabs user={user} listings={listings} getAllListings={getAllListings} />
-        <Footer/>
+        <Footer />
       </div>
-      
-    )}
-    else {
-      return (<SignIn />)
-    }
+
+    )
   }
-  
+  else {
+    return (<SignIn />)
+  }
+}
+
 export default Profile
