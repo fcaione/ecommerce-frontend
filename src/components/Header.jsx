@@ -24,25 +24,25 @@ const Header = ({ user, setUser }) => {
         featured: [
           {
             name: 'Show All',
-            href: '/listing/Women-All-Categories',
+            href: '/listings/tag/Women-All-Categories',
             imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082395659119894568/6dd6d5905823f4f2e4eb7b7596e136d1.png',
             imageAlt: 'All Listings',
           },
           {
             name: 'Tops',
-            href: '/listing/Women-Tops',
+            href: '/listings/tag/Women-Tops',
             imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082394142707036233/Strong-Muscle-Graphic-Men-Tshirt-Hip-Hop-Black-Shirts-Men-Streetwear-Summer-Graphic-Tees-Man-Punk.png',
             imageAlt: 'Women Tops',
           },
           {
             name: 'Bottoms',
-            href: '/listing/Women-Bottoms',
+            href: '/listings/tag/Women-Bottoms',
             imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082390839159947274/wmnpants.jpg',
             imageAlt: 'Women Bottoms',
           },
           {
             name: 'Shoes',
-            href: '/listing/Women-Shoes',
+            href: '/listings/tag/Women-Shoes',
             imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082396339545051237/best-new-balance-sneakwea-for-women.png',
             imageAlt: 'Women Shoes',
           },
@@ -53,25 +53,25 @@ const Header = ({ user, setUser }) => {
         featured: [
           {
             name: 'Show All',
-            href: '/listing/Men-All-Categories',
+            href: '/listings/tag/Men-All-Categories',
             imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082396593086533765/images.png',
             imageAlt: 'All Listings',
           },
           {
             name: 'Tops',
-            href: '/listing/Men-Tops',
+            href: '/listings/tag/Men-Tops',
             imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082394037077680260/Illest-Legend-Tan-T-Shirt-_365430-front-US.png',
             imageAlt: 'Men Tops',
           },
           {
             name: 'Bottoms',
-            href: '/listing/Men-Bottoms',
+            href: '/listings/tag/Men-Bottoms',
             imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082393822836834384/163005271711882ebe92cd4e130a6c1da38f6c41e4_thumbnail_600x.png',
             imageAlt: 'Men Bottoms',
           },
           {
             name: 'Shoes',
-            href: '/listing/Men-Shoes',
+            href: '/listings/tag/Men-Shoes',
             imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082397342541561966/nike-dunk-low-aged-2.png',
             imageAlt: 'Men Shoes',
           },
@@ -82,25 +82,25 @@ const Header = ({ user, setUser }) => {
         featured: [
           {
             name: 'Show All',
-            href: '/listing/Accessories',
+            href: '/listings/tag/Accessories',
             imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082399420164882442/golden-watch.png',
             imageAlt: 'All Listings',
           },
           {
             name: 'Bracelets',
-            href: '/listing/Bracelets',
+            href: '/listings/tag/Bracelets',
             imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082397880997920909/1651604269-cartier-1651604262.png',
             imageAlt: 'Bracelets',
           },
           {
             name: 'Earrings',
-            href: '/listing/Earrings',
+            href: '/listings/tag/Earrings',
             imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082399160034144316/2Q.png',
             imageAlt: 'Earrings',
           },
           {
             name: 'Rings',
-            href: '/listing/Rings',
+            href: '/listings/tag/Rings',
             imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082398115258187828/GUEST_89aed79b-2d4e-4ce9-9b47-b27dc3ec681c.png',
             imageAlt: 'Rings',
           },
@@ -111,25 +111,25 @@ const Header = ({ user, setUser }) => {
         featured: [
           {
             name: 'Show All',
-            href: '/listing/Misc',
+            href: '/listings/tag/Misc',
             imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082401201221546096/5-3.png',
             imageAlt: 'All Listings',
           },
           {
             name: 'Home',
-            href: '/listing/Home',
+            href: '/listings/tag/Home',
             imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082399892086984734/il_794xN.png',
             imageAlt: 'Home Products',
           },
           {
             name: 'Art',
-            href: '/listing/Art',
+            href: '/listings/tag/Art',
             imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082399768438902914/s-l1600.png',
             imageAlt: 'Art Products',
           },
           {
             name: 'Other',
-            href: '/listing/Other',
+            href: '/listings/tag/Other',
             imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1082400246576992276/KAWS-Five-Years-Later-Companion-Figure-Grey.png',
             imageAlt: 'All other things',
           },
