@@ -25,7 +25,7 @@ This is an e-commerce app where users can create their own profiles to post thei
 ![More food](https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg)
 ***
 ### ***Future Updates***
-- [ ] Future Update 1
+- [ ] Add file upload
 - [ ] Future Update 2
 - [x] Completed Update
 - [x] ~~Strikethrough~~ Items Also
