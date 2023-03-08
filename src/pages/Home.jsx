@@ -5,14 +5,14 @@ import Hero from '../components/Hero'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 
-const Home = ({ listings }) => {
+const Home = ({ listings, user}) => {
 
   return (
     <div className="bg-white">
       <Hero />
       <main>
         <Category />
-        <Collection listings={listings}/>
+        <Collection listings={listings} user={user}/>
         <Highlight />
       </main>
       <Footer />

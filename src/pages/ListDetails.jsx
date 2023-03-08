@@ -116,14 +116,28 @@ const ListDetails = ({ user }) => {
 								<div className="sm:flex-col1 mt-10 flex">
 									<div className="sm:flex-col1 mt-10 flex-col">
 										{user?.id !==
-											selectedListing.owner?.id && (
-											<button
-												type="submit"
-												className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
-											>
-												Add to bag
-											</button>
-										)}
+											selectedListing.owner?.id &&
+											selectedListing.soldOut ===
+												false && (
+												<button
+													type="submit"
+													className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
+												>
+													Add to bag
+												</button>
+											)}
+										{user?.id !==
+											selectedListing.owner?.id &&
+											selectedListing.soldOut ===
+												true && (
+												<button
+													type="submit"
+													className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-red-600 py-3 px-8 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
+												>
+													SOLD OUT
+												</button>
+											)}
+
 										{user?.id ===
 											selectedListing.owner?.id && (
 											<button
@@ -186,7 +200,7 @@ const ListDetails = ({ user }) => {
                             <span
                               className={classNames(open ? 'text-indigo-600' : 'text-gray-900', 'text-sm font-medium')}
                             >
-                              {detail.name}
+                            
                             </span>
                             <span className="ml-6 flex items-center">
                               {open ? (

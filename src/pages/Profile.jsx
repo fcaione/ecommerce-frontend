@@ -21,7 +21,6 @@ const Profile = ({ listings, getAllListings }) => {
     getUser()
   }, [])
   
-  
   const profile = {
     name: user?.name,
     email: user?.email,
@@ -66,6 +65,7 @@ const Profile = ({ listings, getAllListings }) => {
             <h1 className="truncate text-2xl font-bold text-gray-900">{profile.name}</h1>
           </div>
         </div>
+        
         <ProfileTabs user={user} listings={listings} getAllListings={getAllListings} />
         <Footer />
       </div>
