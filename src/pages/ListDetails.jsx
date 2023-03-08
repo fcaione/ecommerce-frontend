@@ -11,7 +11,7 @@ import Client from "../services/api"
 import { useParams } from "react-router-dom"
 import Comments from "../components/Comments"
 import ToggleEditListing from "../components/ToggleEditListing"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const ListDetails = ({ user }) => {
 	function classNames(...classes) {
@@ -19,6 +19,8 @@ const ListDetails = ({ user }) => {
 	}
 
 	let { listingId } = useParams()
+
+	let navigate = useNavigate()
 
 	// const [selectedColor, setSelectedColor] = useState(product.colors[0])
 
@@ -37,6 +39,7 @@ const ListDetails = ({ user }) => {
 
 	const deleteListing = async () => {
 		const res = await Client.delete(`/listings/${listingId}`)
+		navigate("/listings")
 	}
 
 	return toggleEditing ? (
@@ -87,7 +90,7 @@ const ListDetails = ({ user }) => {
 								<div className="flex mt-6">
 									<div className="mr-4 flex-shrink-0 self-center">
 										<img
-											className="h-16 w-16 border border-gray-300 bg-white text-gray-300"
+											className="h-16 w-16 border border-gray-300 bg-white text-gray-300 rounded-full object-cover"
 											src={
 												selectedListing.owner
 													?.profileImage
@@ -229,7 +232,7 @@ const ListDetails = ({ user }) => {
 					</div>
 				</div>
 			</div>
-			<Comments comments={selectedListing.comments} user={user} />
+			<Comments comments={selectedListing.comments} user={user} getListing={getListing}/>
 		</>
 	)
 }

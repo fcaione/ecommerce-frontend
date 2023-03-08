@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import { Link } from 'react-router-dom'
 import boxGirl from "../images/girl-on-box.png"
 
 const Hero = () => {
@@ -29,12 +29,12 @@ const Hero = () => {
             The new arrivals have, well, newly arrived. Check out the latest options from our summer small-batch release
             while they're still in stock.
           </p>
-          <a
-            href="#"
+          <Link
+            to="/listings"
             className="mt-8 inline-block rounded-md border border-transparent bg-white py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100"
           >
             Shop New Arrivals
-          </a>
+          </Link>
         </div>
       </div>
   )
