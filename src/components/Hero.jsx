@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom'
 import boxGirl from "../images/girl-on-box.png"
 
 const Hero = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
   }
-
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
       <div className="relative bg-gray-900">
@@ -21,8 +20,6 @@ const Hero = () => {
           />
         </div>
         <div aria-hidden="true" className="absolute inset-0 bg-gray-900 opacity-50" />
-
-
         <div className="relative mx-auto flex max-w-3xl flex-col items-center py-32 px-6 text-center sm:py-64 lg:px-0">
           <h1 className="text-4xl font-bold tracking-tight text-white lg:text-6xl">New arrivals are here</h1>
           <p className="mt-4 text-xl text-white">
@@ -35,7 +32,9 @@ const Hero = () => {
           >
             Shop New Arrivals
           </Link>
+          
         </div>
+        
       </div>
   )
 }
