@@ -24,6 +24,10 @@ const SignIn = (props) => {
     navigate('/')
   }
 
+  const guestSignIn = async (e) => {
+    const payload = await SignInUser()
+  }
+
 
   return (
     <>
