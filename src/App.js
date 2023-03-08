@@ -67,6 +67,9 @@ function App() {
 					}
 				/>
 				<Route
+					path="/listings/:tagName"
+					element={<Listings />} />
+				<Route
 					path="/listings/:listingId"
 					element={<ListDetails user={user} />}
 				/>
