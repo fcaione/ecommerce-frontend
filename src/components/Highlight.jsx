@@ -2,7 +2,7 @@ import posingshoes from '../images/posingshoes.webp'
 const Highlight = () => {
 
   return (
-        <section aria-labelledby="comfort-heading" className="mx-auto max-w-7xl py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
+        <section aria-labelledby="comfort-heading" className="mx-auto max-w-7xl pb-24 pt-10 px-4 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden rounded-lg">
             <div className="absolute inset-0">
               <img

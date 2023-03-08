@@ -200,7 +200,7 @@ const ListDetails = ({ user }) => {
                             <span
                               className={classNames(open ? 'text-indigo-600' : 'text-gray-900', 'text-sm font-medium')}
                             >
-                              {detail.name}
+                            
                             </span>
                             <span className="ml-6 flex items-center">
                               {open ? (
