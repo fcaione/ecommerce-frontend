@@ -8,11 +8,15 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import homeIcon from "../images/online-shopping.png"
+import { useNavigate } from 'react-router-dom'
 
 
 
 
-const Header = ({ user }) => {
+const Header = ({ user, setUser }) => {
+  
+  const navigate = useNavigate()
+
   const navigation = {
     categories: [
       {
@@ -142,6 +146,12 @@ const Header = ({ user }) => {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  const signOut = () => {
+    localStorage.clear()
+    setUser(null)
+    navigate('/')
+  }
+
 
   return (
     <>
@@ -261,6 +271,9 @@ const Header = ({ user }) => {
               <a href="http://localhost:3000/addListingsForm" className="text-sm font-medium text-white hover:text-gray-100">
                   Add Listing
                 </a>
+              <button onClick={() => signOut()} className="text-sm font-medium text-white hover:text-gray-100">
+                  Sign Out
+                </button>
               </div>}
             </div> 
 
