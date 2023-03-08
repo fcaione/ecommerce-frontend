@@ -47,7 +47,7 @@ const Comments = (props) => {
 							<div className="lg:col-span-8 lg:col-start-5 xl:col-span-9 xl:col-start-4 xl:grid xl:grid-cols-3 xl:items-start xl:gap-x-8">
 								<div className="mt-4 lg:mt-6 xl:col-span-2 xl:mt-0">
 									<h3 className="text-sm font-medium text-gray-900">
-										{comment.commentOwner.name}
+										{comment.commentOwner?.name}
 									</h3>
 
 									<div
@@ -63,7 +63,7 @@ const Comments = (props) => {
 							<Link to={`/profile/${comment.commentOwner?.id}`}>
 							<div className="mt-6 flex items-center text-sm lg:col-span-4 lg:col-start-1 lg:row-start-1 lg:mt-0 lg:flex-col lg:items-start xl:col-span-3">
 								<p className="font-medium text-gray-900">
-									{comment.commentOwner.name}
+									{comment.commentOwner?.name}
 								</p>
 								<time
 									dateTime={comment.createdAt}

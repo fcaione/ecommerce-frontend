@@ -378,7 +378,7 @@ const Header = ({ user, setUser }) => {
                   </div>
 
                   {/* Mobile menu and search (lg-) */}
-                  <div className="flex flex-1 items-center lg:hidden">
+                  <div className="flex flex-2 items-center lg:hidden w-12">
                     <button type="button" className="-ml-2 p-2 text-white" onClick={() => setMobileMenuOpen(true)}>
                       <span className="sr-only">Open menu</span>
                       <Bars3Icon className="h-6 w-6" aria-hidden="true" />
@@ -404,7 +404,7 @@ const Header = ({ user, setUser }) => {
                             onSelect={handleOnSelect}
                             formatResult={formatResult}
                             styling={{
-                              width: '50px',
+                              width: '40px',
                               zIndex: 4,
                               color: 'black'
                             }}
