@@ -12,7 +12,7 @@ const AddListingsForm = ({ user }) => {
     price: '',
     image: '',
     description: '',
-    userId: 10
+    userId: ''
   })
   
 
@@ -24,10 +24,14 @@ const AddListingsForm = ({ user }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await Client.post('/listings', formValues)
+    await Client.post(`/listings/${user.id}`, {
+    name: formValues.name,
+    price: formValues.price,
+    image: formValues.image,
+    description: formValues.description,
+    userId: user.id})
     navigate('/')
   }
-
 
 
   return (
@@ -119,7 +123,7 @@ const AddListingsForm = ({ user }) => {
 
       </div>
       <div className="pt-5">
-        <div className="flex justify-end mb-5">
+        <div className="flex justify-end mb-40">
           <button
             type="reset"
             className="mb-rounded-md bg-white py-2 px-3 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"

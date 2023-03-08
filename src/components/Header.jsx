@@ -223,7 +223,7 @@ const Header = ({ user }) => {
                     ))}
                   </Tab.Panels>
                 </Tab.Group>
-                  <div className="space-y-6 border-t border-gray-200 py-6 px-4">
+                  {/* <div className="space-y-6 border-t border-gray-200 py-6 px-4">
                     <div className="flow-root">
                       <a href="http://localhost:3000/signup" className="-m-2 block p-2 font-medium text-gray-900">
                         Create an account
@@ -234,7 +234,7 @@ const Header = ({ user }) => {
                         Sign in
                       </a>
                     </div>
-                  </div> 
+                  </div>  */}
               </Dialog.Panel>
             </Transition.Child>
           </div>
