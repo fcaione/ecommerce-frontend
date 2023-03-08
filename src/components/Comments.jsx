@@ -1,7 +1,7 @@
 import { StarIcon } from "@heroicons/react/20/solid"
 import { useState } from "react"
 import Client from "../services/api"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 
 const Comments = (props) => {
 	function classNames(...classes) {
@@ -29,7 +29,7 @@ const Comments = (props) => {
 			formValues
 		)
 		setFormValues({ content: "" })
-		props.getListing()
+		await props.getListing()
 	}
 
 	return (
@@ -59,6 +59,8 @@ const Comments = (props) => {
 								</div>
 							</div>
 
+
+							<Link to={`/profile/${comment.commentOwner?.id}`}>
 							<div className="mt-6 flex items-center text-sm lg:col-span-4 lg:col-start-1 lg:row-start-1 lg:mt-0 lg:flex-col lg:items-start xl:col-span-3">
 								<p className="font-medium text-gray-900">
 									{comment.commentOwner.name}
@@ -70,6 +72,7 @@ const Comments = (props) => {
 									{/* {comment.} */}
 								</time>
 							</div>
+							</Link>
 						</div>
 					))}
 				</div>
