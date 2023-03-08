@@ -14,7 +14,6 @@ const tabs = [
         <div className="bg-white">
           <div className="mx-auto max-w-7xl mb-9 overflow-hidden px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-6 lg:gap-x-8">
-
               {listings.map((listing, index) => {
                 if(listing.userId === user.id){
                   return(
@@ -24,11 +23,10 @@ const tabs = [
                 name={listing.name}
                 color={listing.color}
                 price={listing.price}
-                userId={listing.userId}
                 getAllListings={getAllListings}  
-                user={user}
-                />
-              ))}
+                />)
+                }
+              })}
             </div>
           </div>
         </div>

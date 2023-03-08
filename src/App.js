@@ -14,7 +14,6 @@ import Client from "./services/api"
 import AddListingsForm from "./pages/AddListingsForm"
 
 function App() {
-	const [listings, setListings] = useState([])
 
   const [listings, setListings] = useState([])
 
