@@ -50,6 +50,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/profile/:userId" element={<Profile user={user} listings={listings} getAllListings={getAllListings}/>} />
           <Route path="/listings" element={<Listings listings={listings} getAllListings={getAllListings}/>} />
+          <Route path="/listings/:tagName" element={<Listings />} />
           <Route path="/listings/:listingId" element={<ListDetails user={user} />} />
           <Route path="/checkout" element={<CheckoutForm />} />
           <Route path="/signIn" element={<SignIn setUser={setUser} />} />
