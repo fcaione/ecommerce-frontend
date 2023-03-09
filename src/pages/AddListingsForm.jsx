@@ -27,7 +27,7 @@ const AddListingsForm = ({ user, getAllListings, file, handleChange, handleUploa
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (readyToPost) {
-      const res = await Client.post(`/listings/${user.id}`, {
+      const res = await Client.post(`/listings`, {
         name: formValues.name,
         price: formValues.price,
         image: imageUrl,
