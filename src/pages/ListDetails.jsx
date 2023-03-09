@@ -47,7 +47,7 @@ const ListDetails = ({ user, getAllListings, file, handleImageChange, handleUplo
 				<div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
 					<div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
 						{/* Image gallery */}
-						<div className="h-56 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-72 xl:h-80">
+						<div className="h60 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-80 xl:h-96">
 							<img
 								src={selectedListing.image}
 								alt="picture of product"
