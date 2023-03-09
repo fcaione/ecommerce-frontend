@@ -55,7 +55,8 @@ function App() {
       alert("Please upload an image first!");
     }
 
-    const storageRef = ref(storage, `/files/${file.name}`);
+    const randomInt = Math.random();
+    const storageRef = ref(storage, `/files/${randomInt}${file.name}`);
 
     // progress can be paused and resumed. It also exposes progress updates.
     // Receives the storage reference and the file to upload.
@@ -89,7 +90,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/profile/:userId" element={<Profile user={user} listings={listings} getAllListings={getAllListings} />} />
         <Route path="/listings" element={<Listings listings={listings} getAllListings={getAllListings} />} />
-        <Route path="/listings/:listingId" element={<ListDetails user={user} file={file} handleImageChange={handleChange} handleUpload={handleUpload} percent={percent} imageUrl={imageUrl}/>} />
+        <Route path="/listings/:listingId" element={<ListDetails user={user} file={file} handleImageChange={handleChange} handleUpload={handleUpload} percent={percent} imageUrl={imageUrl} getAllListings={getAllListings} />} />
         <Route path="/listings/tag/:tagName" element={<TagListings />} />
         <Route path="/checkout" element={<CheckoutForm />} />
         <Route path="/signIn" element={<SignIn setUser={setUser} />} />
