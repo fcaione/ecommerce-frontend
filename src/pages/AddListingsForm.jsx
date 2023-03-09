@@ -4,7 +4,7 @@ import Client from "../services/api"
 import { useNavigate } from "react-router-dom"
 import Checkbox from "../components/Checkbox"
 
-const AddListingsForm = ({ user, getAllListings }) => {
+const AddListingsForm = ({ user, getAllListings, file, handleChange, handleUpload, percent, imageUrl }) => {
 
   const navigate = useNavigate()
 
@@ -18,7 +18,7 @@ const AddListingsForm = ({ user, getAllListings }) => {
     userId: ''
   })
 
-  const handleChange = (e) => {
+  const handleFormChange = (e) => {
     setFormValues({
       ...formValues, [e.target.name]: e.target.value
     })
@@ -26,10 +26,11 @@ const AddListingsForm = ({ user, getAllListings }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (percent === 100) {
     const res = await Client.post(`/listings/${user.id}`, {
       name: formValues.name,
       price: formValues.price,
-      image: formValues.image,
+      image: imageUrl,
       description: formValues.description,
       userId: user.id
     })
@@ -37,7 +38,10 @@ const AddListingsForm = ({ user, getAllListings }) => {
       setNextStep(true)
       setListing(res.data)
     }
+    }
   }
+
+  console.log("FORM", formValues)
 
   return (
     <div>
@@ -59,12 +63,13 @@ const AddListingsForm = ({ user, getAllListings }) => {
                   </label>
                   <div className="mt-2">
                     <input
+                      value={formValues.name}
                       type="text"
                       name="name"
                       id="name"
                       required
                       autoComplete="given-name"
-                      onChange={handleChange}
+                      onChange={handleFormChange}
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>
@@ -76,10 +81,11 @@ const AddListingsForm = ({ user, getAllListings }) => {
                   </label>
                   <div className="mt-2">
                     <textarea
+                      value={formValues.description}
                       name="description"
                       id="description"
                       required
-                      onChange={handleChange}
+                      onChange={handleFormChange}
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>
@@ -92,13 +98,14 @@ const AddListingsForm = ({ user, getAllListings }) => {
                   </label>
                   <div className="mt-2">
                     <input
+                      value={formValues.price}
                       type="number"
                       step="1"
                       min="0"
                       name="price"
                       id="price"
                       required
-                      onChange={handleChange}
+                      onChange={handleFormChange}
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>
@@ -106,18 +113,25 @@ const AddListingsForm = ({ user, getAllListings }) => {
                 </div>
 
                 <div className="sm:col-span-6">
-                  <label htmlFor="image" className="block text-md font-medium leading-6 text-gray-900">
-                    Image Address
+                  <div className="flex">
+                  <label htmlFor="image" className="block text-md font-medium leading-6 text-gray-900 mr-4">
+                    Upload image
                   </label>
+                  <p>{percent}% done</p>
+                  </div>
                   <div className="mt-2">
-                    <input
+                    <input  type="file" onChange={handleChange} accept="/image/*" />
+                    <button
+                      className="ml-3 inline-flex justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                      onClick={handleUpload}>Upload image</button>
+                    {/* <input
                       type="text"
                       name="image"
                       id="image"
                       required
                       onChange={handleChange}
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
+                    /> */}
                   </div>
                 </div>
 

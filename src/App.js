@@ -13,10 +13,15 @@ import { CheckSession } from "./services/Auth"
 import Client from "./services/api"
 import AddListingsForm from "./pages/AddListingsForm"
 import TagListings from "./pages/TagListings"
+import storage from "./firebaseConfig.js"
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 function App() {
-
   const [listings, setListings] = useState([])
+  const [percent, setPercent] = useState(0);
+  const [file, setFile] = useState("");
+  const [user, setUser] = useState(null)
+  const [imageUrl, setImageUrl] = useState("")
 
   useEffect(() => {
     getAllListings()
@@ -29,8 +34,6 @@ function App() {
 		setListings(res.data)
 	}
 
-  const [user, setUser] = useState(null)
-
   const checkToken = async () => {
     const currentUser = await CheckSession()
     setUser(currentUser)
@@ -42,6 +45,41 @@ function App() {
       checkToken()
     }
   }, [])
+
+  function handleChange(event) {
+        setFile(event.target.files[0]);
+    }
+
+  const handleUpload = () => {
+        if (!file) {
+            alert("Please upload an image first!");
+        }
+ 
+        const storageRef = ref(storage, `/files/${file.name}`);
+ 
+        // progress can be paused and resumed. It also exposes progress updates.
+        // Receives the storage reference and the file to upload.
+        const uploadTask = uploadBytesResumable(storageRef, file);
+ 
+        uploadTask.on(
+            "state_changed",
+            (snapshot) => {
+                const percent = Math.round(
+                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                );
+ 
+                // update progress
+                setPercent(percent);
+            },
+            (err) => console.log(err),
+            () => {
+                // download url
+                getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+                    setImageUrl(url)
+                });
+            }
+        );
+    };
 
   return (
     <>
@@ -56,7 +94,7 @@ function App() {
           <Route path="/checkout" element={<CheckoutForm />} />
           <Route path="/signIn" element={<SignIn setUser={setUser} />} />
           <Route path="/signUp" element={<SignUp />} />
-          <Route path="/addListingsForm" element={<AddListingsForm user={user} getAllListings={getAllListings}/>} />
+          <Route path="/addListingsForm" element={<AddListingsForm user={user} getAllListings={getAllListings} file={file} handleChange={handleChange} handleUpload={handleUpload} percent={percent} imageUrl={imageUrl} />} />
         </Routes>
     </>
   )
