@@ -17,6 +17,10 @@ const EditListingForm = ({
 	user,
 	setToggleEditing,
 	getListing,
+	percent,
+	handleUpload,
+	handleImageChange,
+	imageUrl
 }) => {
 	const navigate = useNavigate()
 
@@ -26,7 +30,7 @@ const EditListingForm = ({
 		name: selectedListing.name,
 		price: selectedListing.price,
 		soldOut: selectedListing.soldOut,
-		image: selectedListing.image,
+		image: imageUrl,
 		description: selectedListing.description,
 		userId: user?.id,
 	})
@@ -48,6 +52,7 @@ const EditListingForm = ({
 		setToggleEditing(false)
 		getListing()
 	}
+
 	return (
 		<div>
 			<div className="flex justify-center">
@@ -142,16 +147,31 @@ const EditListingForm = ({
 									>
 										Image Address
 									</label>
-									<div className="mt-2">
-										<input
-											type="text"
-											value={formValues.image}
-											name="image"
-											id="image"
-											required
-											onChange={handleChange}
-											className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-										/>
+									{/* {imageupload} */}
+									<div className="sm:col-span-6">
+										<div className="flex">
+											<label
+												htmlFor="image"
+												className="block text-md font-medium leading-6 text-gray-900 mr-4"
+											>
+												Upload image
+											</label>
+											<p>{percent}% done</p>
+										</div>
+										<div className="mt-2">
+											<input
+												type="file"
+												onChange={handleImageChange}
+												accept="/image/*"
+											/>
+											<button
+												className="ml-3 inline-flex justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+												onClick={handleUpload}
+												type="button"
+											>
+												Upload image
+											</button>
+										</div>
 									</div>
 								</div>
 
@@ -163,8 +183,7 @@ const EditListingForm = ({
 					</div>
 					<div className="pt-5">
 						<div className="flex justify-end mb-40">
-							
-						<button
+							<button
 								type="button"
 								className="ml-3 inline-flex justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
 								onClick={() => setToggleEditing(false)}
@@ -177,106 +196,11 @@ const EditListingForm = ({
 							>
 								Done
 							</button>
-
 						</div>
 					</div>
 				</form>
 			</div>
 		</div>
 	)
-
-	// return (
-	// 	<>
-	// 		<form onSubmit={handleSubmit}>
-	// 			<div className="bg-white">
-	// 				<div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-	// 					<div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
-	// 						{/* Image gallery */}
-	// 						<div className="h-56 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-72 xl:h-80">
-	// 							<img
-	// 								src={selectedListing.image}
-	// 								alt="picture of product"
-	// 								className="h-full w-full object-cover object-center"
-	// 							/>
-	// 						</div>
-
-	// 						{/* Product info */}
-	// 						<div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
-	// 							<h1 className="text-3xl font-bold tracking-tight text-gray-900">
-	// 								<input
-	// 									type="text"
-	// 									name="name"
-	// 									id="name"
-	// 									value={formValues.name}
-	// 									onChange={handleChange}
-	// 								/>
-	// 							</h1>
-
-	// 							<div className="mt-3">
-	// 								<h2 className="sr-only">
-	// 									Product information
-	// 								</h2>
-	// 								<p className="text-3xl tracking-tight text-gray-900">
-	// 									<input
-	// 										type="text"
-	// 										name="price"
-	// 										id="price"
-	// 										value={formValues.price}
-	// 										onChange={handleChange}
-	// 									/>
-	// 								</p>
-	// 							</div>
-
-	// 							<div className="mt-6">
-	// 								<h3 className="sr-only">Description</h3>
-	// 								<input
-	// 									type="text"
-	// 									name="description"
-	// 									id="description"
-	// 									value={formValues.description}
-	// 									onChange={handleChange}
-	// 								/>
-	// 								<div className="space-y-6 text-base text-gray-700" />
-	// 							</div>
-
-	// 							<div className="sm:flex-col1 mt-10 flex">
-	// 								<div className="sm:flex-col1 mt-10 flex-col">
-	// 									<button
-	// 										type="reset"
-	// 										className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-red-600 py-3 px-8 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
-	// 										onClick={() =>
-	// 											setToggleEditing(false)
-	// 										}
-	// 									>
-	// 										Cancel
-	// 									</button>
-	// 									<button
-	// 										type="submit"
-	// 										className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-gray-600 py-3 px-8 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full mt-5"
-	// 									>
-	// 										Submit
-	// 									</button>
-	// 								</div>
-	// 							</div>
-
-	// 							<section
-	// 								aria-labelledby="details-heading"
-	// 								className="mt-12"
-	// 							>
-	// 								<h2
-	// 									id="details-heading"
-	// 									className="sr-only"
-	// 								>
-	// 									Additional details
-	// 								</h2>
-	// 							</section>
-	// 						</div>
-	// 					</div>
-	// 				</div>
-	// 			</div>
-	// 		</form>
-	// 		<Comments comments={selectedListing.comments} user={user} />
-	// 	</>
-	// )
 }
 export default EditListingForm
