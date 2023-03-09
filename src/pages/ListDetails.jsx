@@ -13,7 +13,7 @@ import Comments from "../components/Comments"
 import EditListingForm from "../components/EditListingForm"
 import { Link, useNavigate } from "react-router-dom"
 
-const ListDetails = ({ user }) => {
+const ListDetails = ({ user, getAllListings }) => {
 	function classNames(...classes) {
 		return classes.filter(Boolean).join(" ")
 	}
@@ -37,6 +37,7 @@ const ListDetails = ({ user }) => {
 
 	const deleteListing = async () => {
 		const res = await Client.delete(`/listings/${listingId}`)
+		getAllListings()
 		navigate("/listings")
 	}
 
@@ -159,7 +160,8 @@ const ListDetails = ({ user }) => {
 											</button>
 										)}
 									</div>
-
+									
+									{/* heartIcon button
 									<button
 										type="button"
 										className="ml-4 flex items-center justify-center rounded-md py-3 px-3 text-gray-400 hover:bg-gray-100 hover:text-gray-500"
@@ -171,7 +173,8 @@ const ListDetails = ({ user }) => {
 										<span className="sr-only">
 											Add to favorites
 										</span>
-									</button>
+									</button> */}
+
 									{user?.id === selectedListing.owner?.id && (
 										<button
 											type="button"
