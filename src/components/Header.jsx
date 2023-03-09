@@ -356,10 +356,10 @@ const Header = ({ user, setUser }) => {
                                                   className="object-cover object-center"
                                                 />
                                               </div>
-                                              <a href={item.href} className="mt-4 block font-medium text-gray-900">
+                                              <Link to={item.href} className="mt-4 block font-medium text-gray-900">
                                                 <span className="absolute inset-0 z-10" aria-hidden="true" />
                                                 {item.name}
-                                              </a>
+                                              </Link>
                                               <p aria-hidden="true" className="mt-1">
                                                 Shop now
                                               </p>
@@ -389,7 +389,7 @@ const Header = ({ user, setUser }) => {
                   </div>
 
                   {/* Logo (lg-) */}
-                  <Link to="http://localhost:3000/">
+                  <Link to="/">
                   <button className="lg:hidden">
                     <span className="sr-only">Ecommerce</span>
                     <img src={homeIcon} alt="" className="h-8 w-auto" />
