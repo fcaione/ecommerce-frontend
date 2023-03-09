@@ -55,7 +55,8 @@ function App() {
       alert("Please upload an image first!");
     }
 
-    const storageRef = ref(storage, `/files/${file.name}`);
+    const randomInt = Math.random();
+    const storageRef = ref(storage, `/files/${randomInt}${file.name}`);
 
     // progress can be paused and resumed. It also exposes progress updates.
     // Receives the storage reference and the file to upload.
