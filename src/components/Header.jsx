@@ -12,6 +12,7 @@ import {
 import { ReactSearchAutocomplete } from "react-search-autocomplete"
 import data from '../data/data'
 
+
 const Header = ({ user, setUser }) => {
   const navigate = useNavigate()
 
@@ -388,10 +389,12 @@ const Header = ({ user, setUser }) => {
                   </div>
 
                   {/* Logo (lg-) */}
-                  <a href="http://localhost:3000/" className="lg:hidden">
+                  <Link to="http://localhost:3000/">
+                  <button className="lg:hidden">
                     <span className="sr-only">Ecommerce</span>
                     <img src={homeIcon} alt="" className="h-8 w-auto" />
-                  </a>
+                  </button>
+                  </Link>
 
                   
 
