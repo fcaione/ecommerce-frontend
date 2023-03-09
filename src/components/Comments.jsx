@@ -4,9 +4,6 @@ import Client from "../services/api"
 import { Link, useParams } from "react-router-dom"
 
 const Comments = (props) => {
-	function classNames(...classes) {
-		return classes.filter(Boolean).join(" ")
-	}
 
 	let { listingId } = useParams()
 
@@ -32,52 +29,41 @@ const Comments = (props) => {
 		await props.getListing()
 	}
 
-	return (
+	return props.comments && (
 		<div className="bg-white">
-			<div className="mx-auto max-w-2xl py-0 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-				<h2 className="text-lg font-medium text-gray-900">
-					Recent comments
+			<div className="mx-auto max-w-2xl py-0 px-4 sm:py-8 sm:px-6 lg:max-w-7xl lg:px-8">
+				<h2 id="reviews-heading" className="sr-only">
+					Reviews
 				</h2>
-				<div className="mt-6 space-y-10 divide-y divide-gray-200 border-t border-b border-gray-200 pb-10">
-					{props.comments?.map((comment) => (
-						<div
-							key={comment.id}
-							className="pt-10 lg:grid lg:grid-cols-12 lg:gap-x-8"
-						>
-							<div className="lg:col-span-8 lg:col-start-5 xl:col-span-9 xl:col-start-4 xl:grid xl:grid-cols-3 xl:items-start xl:gap-x-8">
-								<div className="mt-4 lg:mt-6 xl:col-span-2 xl:mt-0">
-									<h3 className="text-sm font-medium text-gray-900">
-										{comment.commentOwner?.name}
-									</h3>
+				<h2 className="text-lg font-medium text-gray-900 pb-4">Recent comments</h2>
 
-									<div
-										className="mt-3 space-y-6 text-sm text-gray-500"
-										dangerouslySetInnerHTML={{
-											__html: comment.content,
-										}}
-									/>
-								</div>
+				<div className="space-y-10 pb-4">
+					{props.comments.map((comment) => (
+						<div key={comment.id} className="flex flex-col sm:flex-row">
+							<div className="order-2 mt-6 sm:mt-0 sm:ml-16">
+								<div
+									className="mt-3 space-y-6 text-base text-gray-600"
+									dangerouslySetInnerHTML={{ __html: comment.content }}
+								/>
 							</div>
 
-
 							<Link to={`/profile/${comment.commentOwner?.id}`}>
-							<div className="mt-6 flex items-center text-sm lg:col-span-4 lg:col-start-1 lg:row-start-1 lg:mt-0 lg:flex-col lg:items-start xl:col-span-3">
+							<div className="order-1 flex items-center sm:flex-col sm:items-start">
+								<img
+									src={comment.commentOwner?.profileImage}
+									alt={`${comment.commentOwner?.name}.`}
+									className="h-12 w-12 rounded-full object-cover"
+								/>
 								<p className="font-medium text-gray-900">
 									{comment.commentOwner?.name}
 								</p>
-								<time
-									dateTime={comment.createdAt}
-									className="ml-4 border-l border-gray-200 pl-4 text-gray-500 lg:ml-0 lg:mt-2 lg:border-0 lg:pl-0"
-								>
-									{/* {comment.} */}
-								</time>
 							</div>
 							</Link>
 						</div>
 					))}
 				</div>
 
-				{!toggleAddingComment && (
+				{!toggleAddingComment && props.user && (
 					<button
 						type="submit"
 						className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-gray-600 py-3 px-8 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full mt-5"
