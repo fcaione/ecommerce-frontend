@@ -129,7 +129,7 @@ const ListDetails = ({ user, getAllListings, file, handleImageChange, handleUplo
 												false && (
 												<button
 													type="button"
-													className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
+													className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-[#ED1C24] py-3 px-8 text-base font-medium text-white hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
 												>
 													Add to bag
 												</button>
@@ -140,7 +140,7 @@ const ListDetails = ({ user, getAllListings, file, handleImageChange, handleUplo
 												true && (
 												<button
 													type="button"
-													className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-red-600 py-3 px-8 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
+													className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-[#000000] py-3 px-8 text-base font-medium text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-black-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
 												>
 													SOLD OUT
 												</button>
@@ -150,7 +150,7 @@ const ListDetails = ({ user, getAllListings, file, handleImageChange, handleUplo
 											selectedListing.owner?.id && !toggleEditing && (
 											<button
 												type="submit"
-												className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-gray-600 py-3 px-8 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full mt-5"
+												className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-[#000000] py-3 px-8 text-base font-medium text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-black-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full mt-5"
 												onClick={(e) =>{
 													e.preventDefault()
 													setToggleEditing(true)
