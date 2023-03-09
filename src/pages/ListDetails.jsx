@@ -44,7 +44,7 @@ const ListDetails = ({ user, getAllListings, file, handleImageChange, handleUplo
 	return (
 		<>
 			<div className="bg-white">
-				<div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+				<div className="mx-auto max-w-2xl py-16 px-4 sm:py-16 sm:px-6 lg:max-w-7xl lg:px-8">
 					<div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
 						{/* Image gallery */}
 						<div className="h60 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-80 xl:h-96">
@@ -176,7 +176,7 @@ const ListDetails = ({ user, getAllListings, file, handleImageChange, handleUplo
 										</span>
 									</button> */}
 
-									{user?.id === selectedListing.owner?.id && (
+									{user?.id === selectedListing.owner?.id && !toggleEditing && (
 										<button
 											type="button"
 											className="ml-4 flex items-center justify-center rounded-md py-3 px-3 text-gray-400 hover:bg-gray-100 hover:text-gray-500"
