@@ -72,9 +72,6 @@ const Profile = ({ listings, getAllListings }) => {
 
     )
   }
-  else {
-    return (<SignIn />)
-  }
 }
 
 export default Profile
