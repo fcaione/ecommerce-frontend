@@ -392,7 +392,7 @@ const Header = ({ user, setUser }) => {
                   <Link to="/">
                   <button className="lg:hidden">
                     <span className="sr-only">Ecommerce</span>
-                    <img src={logoimage} alt="" className="h-8 w-auto" />
+                    <img src={logoimage} alt="" className="h-16 w-auto" />
                   </button>
                   </Link>
 

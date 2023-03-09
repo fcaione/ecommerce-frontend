@@ -12,6 +12,7 @@ import { useParams } from "react-router-dom"
 import Comments from "../components/Comments"
 import EditListingForm from "../components/EditListingForm"
 import { Link, useNavigate } from "react-router-dom"
+import Footer from "../components/Footer"
 
 const ListDetails = ({ user, getAllListings, file, handleImageChange, handleUpload, percent, imageUrl }) => {
 	function classNames(...classes) {
