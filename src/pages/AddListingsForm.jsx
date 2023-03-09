@@ -37,6 +37,7 @@ const AddListingsForm = ({ user, getAllListings, file, handleChange, handleUploa
       if (res.status === 200) {
         setNextStep(true)
         setListing(res.data)
+        percent = 0
       }
     }
   }
