@@ -20,7 +20,7 @@ const EditListingForm = ({
 	percent,
 	handleUpload,
 	handleImageChange,
-	imageUrl
+	imageUrl,
 }) => {
 	const navigate = useNavigate()
 
@@ -29,7 +29,7 @@ const EditListingForm = ({
 	const [formValues, setFormValues] = useState({
 		name: selectedListing.name,
 		price: selectedListing.price,
-		soldOut: selectedListing.soldOut,
+		soldOut: false,
 		image: imageUrl,
 		description: selectedListing.description,
 		userId: user?.id,
@@ -138,6 +138,15 @@ const EditListingForm = ({
 									<p className="mt-2 text-sm text-gray-500">
 										Please Price the Given Item in USD.
 									</p>
+								</div>
+
+								<div className="mt-2">
+									<label htmlFor="soldOut"
+										className="block text-md font-medium leading-6 text-gray-900">Sold</label>
+									<select id="soldOut" name="soldOut" onChange={handleChange} defaultValue="false">
+										<option value="false">In Stock</option>
+										<option value="true">Sold Out</option>
+									</select>
 								</div>
 
 								<div className="sm:col-span-6">
