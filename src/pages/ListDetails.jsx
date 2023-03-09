@@ -13,12 +13,12 @@ import Comments from "../components/Comments"
 import EditListingForm from "../components/EditListingForm"
 import { Link, useNavigate } from "react-router-dom"
 
-const ListDetails = ({ user, getAllListings }) => {
+const ListDetails = ({ user, getAllListings, file, handleImageChange, handleUpload, percent, imageUrl }) => {
 	function classNames(...classes) {
 		return classes.filter(Boolean).join(" ")
 	}
 
-	let { listingId } = useParams()
+	let { listingId} = useParams()
 
 	let navigate = useNavigate()
 
@@ -115,6 +115,7 @@ const ListDetails = ({ user, getAllListings }) => {
 									user={user}
 									setToggleEditing={setToggleEditing}
 									getListing={getListing}
+									file={file} handleImageChange={handleImageChange} handleUpload={handleUpload} percent={percent} imageUrl={imageUrl}
 								/>
 							)}
 
@@ -160,7 +161,7 @@ const ListDetails = ({ user, getAllListings }) => {
 											</button>
 										)}
 									</div>
-									
+
 									{/* heartIcon button
 									<button
 										type="button"

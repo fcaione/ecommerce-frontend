@@ -41,7 +41,14 @@ const EditListingForm = ({
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
-		await Client.put(`/listings/${listingId}`, formValues)
+		await Client.put(`/listings/${listingId}`, {
+			name: formValues.name,
+			price: formValues.price,
+			soldOut: formValues.soldOut,
+			image: imageUrl,
+			description: formValues.description,
+			userId: user?.id,
+		})
 		setFormValues({
 			name: "",
 			price: "",
@@ -141,9 +148,18 @@ const EditListingForm = ({
 								</div>
 
 								<div className="mt-2">
-									<label htmlFor="soldOut"
-										className="block text-md font-medium leading-6 text-gray-900">Sold</label>
-									<select id="soldOut" name="soldOut" onChange={handleChange} defaultValue="false">
+									<label
+										htmlFor="soldOut"
+										className="block text-md font-medium leading-6 text-gray-900"
+									>
+										Sold
+									</label>
+									<select
+										id="soldOut"
+										name="soldOut"
+										onChange={handleChange}
+										defaultValue="false"
+									>
 										<option value="false">In Stock</option>
 										<option value="true">Sold Out</option>
 									</select>
