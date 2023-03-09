@@ -25,7 +25,12 @@ const SignIn = (props) => {
   }
 
   const guestSignIn = async (e) => {
-    const payload = await SignInUser()
+    const payload = await SignInUser({
+      email: 'Guest@guest.com',
+      password: '1234'
+    })
+    props.setUser(payload)
+    navigate('/')
   }
 
 
@@ -100,7 +105,12 @@ const SignIn = (props) => {
                     </button>
                   </div>
                 </form>
-                <h3 className="block text-sm font-medium leading-6 text-gray-900 mt-10">Don't have an account? <Link className="text-indigo-600 hover:text-indigo-500 hover:underline"to="/signup">Create one!</Link></h3>
+                <button 
+                onClick={guestSignIn}
+                className="flex w-full justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mt-5">
+                  Guest sign in
+                </button>
+                <h3 className="block text-sm font-medium leading-6 text-gray-900 mt-5">Don't have an account? <Link className="text-indigo-600 hover:text-indigo-500 hover:underline"to="/signup">Create one!</Link></h3>
               </div>
             </div>
           </div>
