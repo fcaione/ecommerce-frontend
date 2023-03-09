@@ -13,7 +13,7 @@ import Comments from "../components/Comments"
 import EditListingForm from "../components/EditListingForm"
 import { Link, useNavigate } from "react-router-dom"
 
-const ListDetails = ({ user }) => {
+const ListDetails = ({ user, getAllListings }) => {
 	function classNames(...classes) {
 		return classes.filter(Boolean).join(" ")
 	}
@@ -37,6 +37,7 @@ const ListDetails = ({ user }) => {
 
 	const deleteListing = async () => {
 		const res = await Client.delete(`/listings/${listingId}`)
+		getAllListings()
 		navigate("/listings")
 	}
 
