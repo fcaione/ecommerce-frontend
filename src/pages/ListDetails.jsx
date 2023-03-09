@@ -13,12 +13,12 @@ import Comments from "../components/Comments"
 import EditListingForm from "../components/EditListingForm"
 import { Link, useNavigate } from "react-router-dom"
 
-const ListDetails = ({ user, getAllListings }) => {
+const ListDetails = ({ user, getAllListings, file, handleImageChange, handleUpload, percent, imageUrl }) => {
 	function classNames(...classes) {
 		return classes.filter(Boolean).join(" ")
 	}
 
-	let { listingId } = useParams()
+	let { listingId} = useParams()
 
 	let navigate = useNavigate()
 
@@ -47,7 +47,7 @@ const ListDetails = ({ user, getAllListings }) => {
 				<div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
 					<div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
 						{/* Image gallery */}
-						<div className="h-56 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-72 xl:h-80">
+						<div className="h60 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-80 xl:h-96">
 							<img
 								src={selectedListing.image}
 								alt="picture of product"
@@ -115,6 +115,7 @@ const ListDetails = ({ user, getAllListings }) => {
 									user={user}
 									setToggleEditing={setToggleEditing}
 									getListing={getListing}
+									file={file} handleImageChange={handleImageChange} handleUpload={handleUpload} percent={percent} imageUrl={imageUrl}
 								/>
 							)}
 
@@ -128,7 +129,7 @@ const ListDetails = ({ user, getAllListings }) => {
 												false && (
 												<button
 													type="button"
-													className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
+													className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-[#ED1C24] py-3 px-8 text-base font-medium text-white hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
 												>
 													Add to bag
 												</button>
@@ -139,7 +140,7 @@ const ListDetails = ({ user, getAllListings }) => {
 												true && (
 												<button
 													type="button"
-													className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-red-600 py-3 px-8 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
+													className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-[#000000] py-3 px-8 text-base font-medium text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-black-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
 												>
 													SOLD OUT
 												</button>
@@ -149,7 +150,7 @@ const ListDetails = ({ user, getAllListings }) => {
 											selectedListing.owner?.id && !toggleEditing && (
 											<button
 												type="submit"
-												className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-gray-600 py-3 px-8 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full mt-5"
+												className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-[#000000] py-3 px-8 text-base font-medium text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-black-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full mt-5"
 												onClick={(e) =>{
 													e.preventDefault()
 													setToggleEditing(true)
@@ -160,7 +161,7 @@ const ListDetails = ({ user, getAllListings }) => {
 											</button>
 										)}
 									</div>
-									
+
 									{/* heartIcon button
 									<button
 										type="button"

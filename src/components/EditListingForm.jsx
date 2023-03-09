@@ -20,7 +20,7 @@ const EditListingForm = ({
 	percent,
 	handleUpload,
 	handleImageChange,
-	imageUrl
+	imageUrl,
 }) => {
 	const navigate = useNavigate()
 
@@ -29,7 +29,7 @@ const EditListingForm = ({
 	const [formValues, setFormValues] = useState({
 		name: selectedListing.name,
 		price: selectedListing.price,
-		soldOut: selectedListing.soldOut,
+		soldOut: false,
 		image: imageUrl,
 		description: selectedListing.description,
 		userId: user?.id,
@@ -41,7 +41,14 @@ const EditListingForm = ({
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
-		await Client.put(`/listings/${listingId}`, formValues)
+		await Client.put(`/listings/${listingId}`, {
+			name: formValues.name,
+			price: formValues.price,
+			soldOut: formValues.soldOut,
+			image: imageUrl,
+			description: formValues.description,
+			userId: user?.id,
+		})
 		setFormValues({
 			name: "",
 			price: "",
@@ -140,6 +147,24 @@ const EditListingForm = ({
 									</p>
 								</div>
 
+								<div className="mt-2">
+									<label
+										htmlFor="soldOut"
+										className="block text-md font-medium leading-6 text-gray-900"
+									>
+										Sold
+									</label>
+									<select
+										id="soldOut"
+										name="soldOut"
+										onChange={handleChange}
+										defaultValue="false"
+									>
+										<option value="false">In Stock</option>
+										<option value="true">Sold Out</option>
+									</select>
+								</div>
+
 								<div className="sm:col-span-6">
 									<label
 										htmlFor="image"
@@ -165,7 +190,7 @@ const EditListingForm = ({
 												accept="/image/*"
 											/>
 											<button
-												className="ml-3 inline-flex justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+												className="ml-3 inline-flex justify-center rounded-md bg-[#ED1C24] py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mt-4"
 												onClick={handleUpload}
 												type="button"
 											>
@@ -185,14 +210,14 @@ const EditListingForm = ({
 						<div className="flex justify-end mb-40">
 							<button
 								type="button"
-								className="ml-3 inline-flex justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+								className="ml-3 inline-flex justify-center rounded-md bg-black py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black-600"
 								onClick={() => setToggleEditing(false)}
 							>
 								Cancel
 							</button>
 							<button
 								type="submit"
-								className="ml-3 inline-flex justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+								className="ml-3 inline-flex justify-center rounded-md bg-[#ED1C24] py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
 							>
 								Done
 							</button>
