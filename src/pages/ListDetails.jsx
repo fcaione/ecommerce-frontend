@@ -160,7 +160,8 @@ const ListDetails = ({ user, getAllListings }) => {
 											</button>
 										)}
 									</div>
-
+									
+									{/* heartIcon button
 									<button
 										type="button"
 										className="ml-4 flex items-center justify-center rounded-md py-3 px-3 text-gray-400 hover:bg-gray-100 hover:text-gray-500"
@@ -172,7 +173,8 @@ const ListDetails = ({ user, getAllListings }) => {
 										<span className="sr-only">
 											Add to favorites
 										</span>
-									</button>
+									</button> */}
+
 									{user?.id === selectedListing.owner?.id && (
 										<button
 											type="button"
