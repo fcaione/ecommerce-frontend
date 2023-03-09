@@ -1,24 +1,25 @@
+import { Link } from "react-router-dom"
 const Category = () => {
 
   const categories = [
     {
-      name: 'Tops',
-      href: '#',
+      name: "Women's Tops",
+      href: '/listings/tag/Women-Tops',
       imageSrc: 'https://images.squarespace-cdn.com/content/v1/5b438c55e74940da6d9cd433/1541000197297-RBM4UKGHKTZE6KACAY0E/joao-silas-683707-unsplash.jpg',
     },
     {
-      name: 'Bottoms',
-      href: '#',
+      name: "Men's Bottoms",
+      href: '/listings/tag/Men-Tops',
       imageSrc: 'https://cdn.discordapp.com/attachments/1062764461024358555/1083163613243654205/s-l500.png',
     },
     {
       name: 'Shoes',
-      href: '#',
+      href: '/listings/tag/Men-Shoes',
       imageSrc: 'https://cf.shopee.com.mx/file/sg-11134201-22120-2rrnz4ovqjlvfa_tn',
     },
     {
       name: 'Accesories',
-      href: '#',
+      href: '/listings/tag/Accessories',
       imageSrc: 'https://media.sunglasshut.com/2023/01_Trend_Neutrals/MOBILE/MOBILE_HERO.jpg',
     },
     {
@@ -33,12 +34,14 @@ const Category = () => {
     <section aria-labelledby="category-heading" className="pt-24 sm:pt-32 xl:mx-auto xl:max-w-7xl xl:px-8">
           <div className="px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8 xl:px-0">
             <h2 id="category-heading" className="text-2xl font-bold tracking-tight text-gray-900">
-              Shop by Category
+              Popular Categories
             </h2>
-            <a href="#" className="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">
+          
+            {/* <a href="#" className="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">
               Browse all categories
               <span aria-hidden="true"> &rarr;</span>
-            </a>
+            </a> */}
+
           </div>
 
           <div className="mt-4 flow-root">
@@ -46,9 +49,9 @@ const Category = () => {
               <div className="relative box-content h-80 overflow-x-auto py-2 xl:overflow-visible">
                 <div className="min-w-screen-xl absolute flex space-x-8 px-4 sm:px-6 lg:px-8 xl:relative xl:grid xl:grid-cols-5 xl:gap-x-8 xl:space-x-0 xl:px-0">
                   {categories.map((category) => (
-                    <a
+                    <Link
                       key={category.name}
-                      href={category.href}
+                      to={category.href}
                       className="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 hover:opacity-75 xl:w-auto"
                     >
                       <span aria-hidden="true" className="absolute inset-0">
@@ -59,7 +62,7 @@ const Category = () => {
                         className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-gray-800 opacity-50"
                       />
                       <span className="relative mt-auto text-center text-xl font-bold text-white">{category.name}</span>
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -67,10 +70,10 @@ const Category = () => {
           </div>
 
           <div className="mt-6 px-4 sm:hidden">
-            <a href="#" className="block text-sm font-semibold text-indigo-600 hover:text-indigo-500">
+            {/* <a href="#" className="block text-sm font-semibold text-indigo-600 hover:text-indigo-500">
               Browse all categories
               <span aria-hidden="true"> &rarr;</span>
-            </a>
+            </a> */}
           </div>
         </section>
   )
