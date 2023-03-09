@@ -27,12 +27,12 @@ function App() {
     getAllListings()
   }, [])
 
-	const getAllListings = async () => {
-		const res = await Client.get(`/listings`)
-		console.log(res.data)
+  const getAllListings = async () => {
+    const res = await Client.get(`/listings`)
+    console.log(res.data)
     await res.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-		setListings(res.data)
-	}
+    setListings(res.data)
+  }
 
   const checkToken = async () => {
     const currentUser = await CheckSession()
@@ -47,55 +47,55 @@ function App() {
   }, [])
 
   function handleChange(event) {
-        setFile(event.target.files[0]);
-    }
+    setFile(event.target.files[0]);
+  }
 
   const handleUpload = () => {
-        if (!file) {
-            alert("Please upload an image first!");
-        }
- 
-        const storageRef = ref(storage, `/files/${file.name}`);
- 
-        // progress can be paused and resumed. It also exposes progress updates.
-        // Receives the storage reference and the file to upload.
-        const uploadTask = uploadBytesResumable(storageRef, file);
- 
-        uploadTask.on(
-            "state_changed",
-            (snapshot) => {
-                const percent = Math.round(
-                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-                );
- 
-                // update progress
-                setPercent(percent);
-            },
-            (err) => console.log(err),
-            () => {
-                // download url
-                getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-                    setImageUrl(url)
-                });
-            }
-        );
-    };
+    if (!file) {
+      alert("Please upload an image first!");
+    }
+
+    const storageRef = ref(storage, `/files/${file.name}`);
+
+    // progress can be paused and resumed. It also exposes progress updates.
+    // Receives the storage reference and the file to upload.
+    const uploadTask = uploadBytesResumable(storageRef, file);
+
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const percent = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
+
+        // update progress
+        setPercent(percent);
+      },
+      (err) => console.log(err),
+      () => {
+        // download url
+        getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+          setImageUrl(url)
+        });
+      }
+    );
+  };
 
   return (
     <>
-      <Header setUser= {setUser} user={user}/>
-        <Routes>
-          <Route path="/" element={<Home  listings={listings}/> } />
-          <Route path="/about" element={<About />} />
-          <Route path="/profile/:userId" element={<Profile user={user} listings={listings} getAllListings={getAllListings}/>} />
-          <Route path="/listings" element={<Listings listings={listings} getAllListings={getAllListings}/>} />
-          <Route path="/listings/:listingId" element={<ListDetails user={user} />} />
-          <Route path="/listings/tag/:tagName" element={<TagListings />} />
-          <Route path="/checkout" element={<CheckoutForm />} />
-          <Route path="/signIn" element={<SignIn setUser={setUser} />} />
-          <Route path="/signUp" element={<SignUp />} />
-          <Route path="/addListingsForm" element={<AddListingsForm user={user} getAllListings={getAllListings} file={file} handleChange={handleChange} handleUpload={handleUpload} percent={percent} imageUrl={imageUrl} />} />
-        </Routes>
+      <Header setUser={setUser} user={user} />
+      <Routes>
+        <Route path="/" element={<Home listings={listings} />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/profile/:userId" element={<Profile user={user} listings={listings} getAllListings={getAllListings} />} />
+        <Route path="/listings" element={<Listings listings={listings} getAllListings={getAllListings} />} />
+        <Route path="/listings/:listingId" element={<ListDetails user={user} />} />
+        <Route path="/listings/tag/:tagName" element={<TagListings />} />
+        <Route path="/checkout" element={<CheckoutForm />} />
+        <Route path="/signIn" element={<SignIn setUser={setUser} />} />
+        <Route path="/signUp" element={<SignUp />} />
+        <Route path="/addListingsForm" element={<AddListingsForm user={user} getAllListings={getAllListings} file={file} handleChange={handleChange} handleUpload={handleUpload} percent={percent} imageUrl={imageUrl} />} />
+      </Routes>
     </>
   )
 }

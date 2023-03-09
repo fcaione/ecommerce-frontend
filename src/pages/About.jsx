@@ -54,11 +54,11 @@ const About = () => {
 
   return (
     <div>
-      <div className="bg-white py-24 sm:py-32">
+      <div className="bg-white py-12 ">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">About Us</h2>
-            <p className="mt-12 text-xl leading-8 text-gray-600">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-7xl">About Us</h2>
+            <p className="mt-8 text-xl leading-8 text-gray-600">
             We are a team of experienced web developers who specialize in creating innovative, user-friendly digital solutions. We use the latest tools and technologies to create responsive, visually stunning websites tailored to meet our clients' unique needs. We value collaboration, communication, and creativity, and work closely with our clients to ensure their goals and objectives are met. Our mission is to help businesses establish a strong online presence and reach their target audience through effective web solutions. Contact us today to learn more.
             </p>
           </div>
