@@ -37,7 +37,7 @@ const AddListingsForm = ({ user, getAllListings, file, handleChange, handleUploa
       if (res.status === 200) {
         setNextStep(true)
         setListing(res.data)
-        percent = 0
+        percent = 100
       }
     }
   }
@@ -57,7 +57,7 @@ const AddListingsForm = ({ user, getAllListings, file, handleChange, handleUploa
                 </p>
               </div>
 
-              <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+              <div className="mt-6 grid grid-cols-1 gap-y-6">
                 <div className="sm:col-span-3">
                   <label htmlFor="name" className="block text-md font-medium leading-6 text-gray-900">
                     Name
@@ -143,7 +143,7 @@ const AddListingsForm = ({ user, getAllListings, file, handleChange, handleUploa
                   {!readyToPost ? (
                     <button
                       type="submit"
-                      className="ml-3 inline-flex justify-center rounded-md bg-slate-400 py-2 px-3 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                      className="ml-3 inline-flex justify-center rounded-md bg-slate-400 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                     >
                       Next
                     </button>) : (

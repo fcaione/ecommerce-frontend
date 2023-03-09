@@ -55,7 +55,7 @@ const Footer = () => {
   ]
   
     return (
-      <footer className="bg-gray-900 fixed inset-x-0 bottom-0">
+      <footer className="bg-[#000000] fixed inset-x-0 bottom-0">
         <div className="mx-auto py-5 px-6 md:flex md:items-center md:justify-between lg:px-8">
           <div className="flex justify-center space-x-6 md:order-2">
             {navigation.map((item, index) => (

@@ -2,6 +2,9 @@ import { SignInUser } from "../services/Auth"
 import { useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 import Footer from "../components/Footer"
+import signInPic from "../images/signinpicture.jpeg"
+import logoimage from "../images/iconfinal.png"
+
 
 const SignIn = (props) => {
 
@@ -37,15 +40,15 @@ const SignIn = (props) => {
   return (
     <>
       <div className="flex min-h-screen">
-        <div className="flex flex-1 flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
+        <div className="flex flex-1 flex-col justify-center pb-64 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
           <div className="mx-auto w-full max-w-sm lg:w-96">
             <div>
               <img
-                className="h-12 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                className="flex h-90 w-auto "
+                src={logoimage}
                 alt="Your Company"
               />
-              <h2 className="mt-6 text-3xl font-bold tracking-tight text-gray-900">Sign in to your account</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900">Sign in to your account</h2>
               
             </div>
 
@@ -66,7 +69,7 @@ const SignIn = (props) => {
                         autoComplete="email"
                         required
                         onChange={handleChange}
-                        className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#ED1C24] sm:text-sm sm:leading-6"
                       />
                     </div>
                   </div>
@@ -83,7 +86,7 @@ const SignIn = (props) => {
                         autoComplete="current-password"
                         required
                         onChange={handleChange}
-                        className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#ED1C24] sm:text-sm sm:leading-6"
                       />
                     </div>
                   </div>
@@ -99,7 +102,7 @@ const SignIn = (props) => {
                   <div>
                     <button
                       type="submit"
-                      className="flex w-full justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                      className="flex w-full justify-center rounded-md bg-[#ED1C24] py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ED1C24]"
                     >
                       Sign in
                     </button>
@@ -107,10 +110,10 @@ const SignIn = (props) => {
                 </form>
                 <button 
                 onClick={guestSignIn}
-                className="flex w-full justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mt-5">
+                className="flex w-full justify-center rounded-md bg-[#000000] py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ED1C24] mt-5">
                   Guest sign in
                 </button>
-                <h3 className="block text-sm font-medium leading-6 text-gray-900 mt-5">Don't have an account? <Link className="text-indigo-600 hover:text-indigo-500 hover:underline"to="/signup">Create one!</Link></h3>
+                <h3 className="block text-sm font-medium leading-6 text-gray-900 mt-5">Don't have an account? <Link className="text-[#ED1C24] hover:text-red-500 hover:underline"to="/signup">Create one!</Link></h3>
               </div>
             </div>
           </div>
@@ -118,7 +121,7 @@ const SignIn = (props) => {
         <div className="relative hidden w-0 flex-1 lg:block">
           <img
             className="absolute inset-0 h-full w-full object-cover"
-            src="https://images.unsplash.com/photo-1505904267569-f02eaeb45a4c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1908&q=80"
+            src={signInPic}
             alt=""
           />
         </div>

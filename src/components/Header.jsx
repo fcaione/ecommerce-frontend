@@ -1,5 +1,4 @@
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
-import homeIcon from "../images/online-shopping.png"
 import { useNavigate, Link } from 'react-router-dom'
 import { Fragment, useState } from 'react'
 import {
@@ -11,6 +10,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { ReactSearchAutocomplete } from "react-search-autocomplete"
 import data from '../data/data'
+import logoimage from "../images/navicon.png"
 
 
 const Header = ({ user, setUser }) => {
@@ -260,10 +260,10 @@ const Header = ({ user, setUser }) => {
           </div>
         </Dialog>
       </Transition.Root>
-      <header className="relative z-10 bg-slate-800">
+      <header className="relative z-10 bg-[#000000]">
         <nav aria-label="Top">
           {/* Top navigation */}
-          <div className="bg-gray-900">
+          <div className="bg-[#ED1C24]">
             <div className="mx-auto flex h-10 items-center justify-end px-4 sm:px-6 lg:px-8">
           {!user ?
               <div className="flex items-center space-x-6">
@@ -300,8 +300,8 @@ const Header = ({ user, setUser }) => {
                     <Link to="/">
                       <span className="sr-only">Ecommerce</span>
                       <img
-                        className="h-11 w-auto"
-                        src={homeIcon}
+                        className="h-36 w-auto"
+                        src={logoimage}
                         alt=""
                       />
                     </Link>
@@ -392,7 +392,7 @@ const Header = ({ user, setUser }) => {
                   <Link to="/">
                   <button className="lg:hidden">
                     <span className="sr-only">Ecommerce</span>
-                    <img src={homeIcon} alt="" className="h-8 w-auto" />
+                    <img src={logoimage} alt="" className="h-8 w-auto" />
                   </button>
                   </Link>
 
