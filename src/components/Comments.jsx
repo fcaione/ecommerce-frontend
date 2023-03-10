@@ -28,7 +28,7 @@ const Comments = (props) => {
 		await props.getListing()
 	}
 
-	return props.comments?.length > 0 && (
+	return (
 			<div className="bg-white">
 				<div className="mx-auto max-w-2xl py-0 px-4 sm:py-8 sm:px-6 lg:max-w-7xl lg:px-8">
 					<h2 id="reviews-heading" className="sr-only">
@@ -39,7 +39,7 @@ const Comments = (props) => {
 					</h2>
 
 					<div className="space-y-10 pb-4">
-						{props.comments.map((comment) => (
+						{props.comments?.map((comment) => (
 							<div key={comment.id} className="flex flex-col sm:flex-row">
 								<div className="order-2 mt-6 sm:mt-0 sm:ml-16">
 									<div
@@ -67,7 +67,7 @@ const Comments = (props) => {
 					{!toggleAddingComment && props.user && (
 						<button
 							type="button"
-							className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-[#ED1C24] py-3 px-8 text-base font-medium text-white hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
+							className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-[#ED1C24] py-3 px-8 text-base font-medium text-white hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full mb-3"
 							onClick={() => setToggleAddingComment(true)}
 						>
 							Post a Comment
@@ -92,7 +92,7 @@ const Comments = (props) => {
 								Submit
 							</button>
 							<button
-								className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-[#000000] py-3 px-8 text-base font-medium text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-black-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
+								className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-[#000000] py-3 px-8 text-base font-medium text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-black-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full mb-3"
 								type="reset"
 								onClick={() => setToggleAddingComment(false)}
 							>
