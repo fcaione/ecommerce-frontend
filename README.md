@@ -1,10 +1,10 @@
-# **Project Title**
+# **Thredz**
 ## **Date**: 03/03/2023
 ### **By**: Anatoliy Agadzhanov, Frederick Caione, Hyun Bin Yim
 #### [Anatoliy's GitHub](https://github.com/yesanatoliy) | [Anatoliy's LinkedIn](https://www.linkedin.com/in/anatoliy-agadzhanov-5a2a54173/) | [Freddy's GitHub](https://github.com/fcaione) | [Freddy's LinkedIn](https://www.linkedin.com/in/frederickcaione) | [HB's GitHub](https://github.com/hby77) | [HB's LinkedIn](https://www.linkedin.com/in/hyunbinyim/)
 ***
 ### ***Description***
-This is an e-commerce app where users can create their own profiles to post their own products to sell locally or through delivery. This is also a social app where users can interact with each other through following each other's pages and commenting on listings. 
+Thredz is an e-commerce app where users can create their own profiles to post their own products to sell locally or through delivery. This is also a social app where users can interact with each other through following each other's pages and commenting on listings. 
 
 ***
 ### ***Technologies Used***
@@ -14,6 +14,7 @@ This is an e-commerce app where users can create their own profiles to post thei
 * Node.js
 * CSS
     * Tailwind
+* Firebase
 
 
 ***
@@ -36,3 +37,11 @@ This is an e-commerce app where users can create their own profiles to post thei
 Project notion board: [Notion](https://en.wikipedia.org/wiki/File:Good_Food_Display_-_NCI_Visuals_Online.jpg)
 
 Components Diagram: [lucid.io](https://lucid.app/lucidchart/b98f06ca-4fc9-43a8-b0b2-fe184611df5b/edit?viewport_loc=-193%2C-91%2C2328%2C1119%2C0_0&invitationId=inv_87f1b4c8-aa5b-4746-9488-350373655d06)
+
+Styling library: [Tailwind css](https://tailwindcss.com/)
+
+Custom logos: [Canva](canva.com)
+
+Cloud storage: [Firebase](firebase.google.com)
+
+Images: [unsplash.com searches](unsplash.com), [tailwind](https://tailwindcss.com)
