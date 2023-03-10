@@ -34,7 +34,7 @@ const Checkbox = ({ listing }) => {
   }
 
 
-  console.log()
+  
   return (
     <fieldset>
       <legend className="text-base font-semibold leading-6 text-gray-900">Tags</legend>
