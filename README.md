@@ -4,7 +4,7 @@
 #### [Anatoliy's GitHub](https://github.com/yesanatoliy) | [Anatoliy's LinkedIn](https://www.linkedin.com/in/anatoliy-agadzhanov-5a2a54173/) | [Freddy's GitHub](https://github.com/fcaione) | [Freddy's LinkedIn](https://www.linkedin.com/in/frederickcaione) | [HB's GitHub](https://github.com/hby77) | [HB's LinkedIn](https://www.linkedin.com/in/hyunbinyim/)
 ***
 ### ***Description***
-Thredz is an e-commerce app where users can create their own profiles to post their own products to sell locally or through delivery. This is also a social app where users can interact with each other through following each other's pages and commenting on listings. 
+Thredz is an e-commerce app where users can create their own profiles to post and sell their products locally or through delivery. It also doubles as a social app where users can interact with each other through commenting on listings and viewing each others profiles. Through this app we hope to promote reusability, reselling and thrift culture in order to combat fast fashion.
 
 ***
 ### ***Technologies Used***
@@ -21,9 +21,13 @@ Thredz is an e-commerce app where users can create their own profiles to post th
 ### ***Screenshots***
 
 #### **image header 1**
-![Food](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/1599px-Good_Food_Display_-_NCI_Visuals_Online.jpg)
+![Sign in page](./src/images/SignIn.png)
 
-![More food](https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg)
+![Home page](./src/images/HomeSc.png)
+
+![Listing page](./src/images/Listing_details.png)
+
+![Profile page](./src/images/Profile_page.png)
 ***
 ### ***Future Updates***
 - [ ] Add saved listings feature

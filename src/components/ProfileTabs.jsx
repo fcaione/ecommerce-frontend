@@ -90,18 +90,18 @@ const tabs = [
       },
     ],
   },
-  {
-    name: 'Saved',
-    features: [
-      {
-        name: "Everything you'll need",
-        content:
-          'Saved feature coming soon! Be ready to bookmark your favorite listings to browse at another time',
-        imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-06-detail-04.jpg',
-        imageAlt: 'Walnut organizer system on black leather desk mat on top of white desk.',
-      },
-    ],
-  },
+  // {
+  //   name: 'Saved',
+  //   features: [
+  //     {
+  //       name: "Everything you'll need",
+  //       content:
+  //         'Saved feature coming soon! Be ready to bookmark your favorite listings to browse at another time',
+  //       imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-06-detail-04.jpg',
+  //       imageAlt: 'Walnut organizer system on black leather desk mat on top of white desk.',
+  //     },
+  //   ],
+  // },
 ]
 
 function classNames(...classes) {
