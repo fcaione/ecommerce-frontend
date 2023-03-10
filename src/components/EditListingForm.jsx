@@ -1,16 +1,7 @@
-import { useState, useEffect } from "react"
-import { Disclosure, RadioGroup, Tab } from "@headlessui/react"
-import { StarIcon } from "@heroicons/react/20/solid"
-import {
-	HeartIcon,
-	MinusIcon,
-	PlusIcon,
-	TrashIcon,
-} from "@heroicons/react/24/outline"
+import { useState } from "react"
 import Client from "../services/api"
-import { useParams, useNavigate } from "react-router-dom"
-import Comments from "./Comments"
-import Checkbox from "./Checkbox"
+import { useParams } from "react-router-dom"
+
 
 const EditListingForm = ({
 	selectedListing,
@@ -22,7 +13,7 @@ const EditListingForm = ({
 	handleImageChange,
 	imageUrl,
 }) => {
-	const navigate = useNavigate()
+	
 
 	let { listingId } = useParams()
 

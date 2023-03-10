@@ -15,7 +15,7 @@ const Highlight = () => {
             <div className="relative bg-gray-900 bg-opacity-75 py-32 px-6 sm:py-40 sm:px-12 lg:px-16">
               <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center">
                 <h2 id="comfort-heading" className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                  Reuseability
+                  Reusability
                 </h2>
                 <p className="mt-3 text-xl text-white">
                 Passed down fashion holds significant cultural and historical value as it tells the story of previous generations and their unique styles. By embracing and preserving these pieces, we not only honor our past but also contribute to a sustainable and environmentally conscious future.

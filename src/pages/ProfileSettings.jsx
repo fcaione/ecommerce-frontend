@@ -1,14 +1,6 @@
-import { useState, useEffect } from "react"
-import { Disclosure, RadioGroup, Tab } from "@headlessui/react"
-import { StarIcon } from "@heroicons/react/20/solid"
-import {
-	HeartIcon,
-	MinusIcon,
-	PlusIcon,
-	TrashIcon,
-} from "@heroicons/react/24/outline"
+import { useState } from "react"
 import Client from "../services/api"
-import { useParams, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 const ProfileSettings = ({
 	user,
@@ -19,7 +11,6 @@ const ProfileSettings = ({
 }) => {
 	const navigate = useNavigate()
 
-	let { listingId } = useParams()
 
 	const [formValues, setFormValues] = useState({
 		name: user.name,

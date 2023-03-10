@@ -1,11 +1,6 @@
 import { useState, useEffect } from "react"
-import { Disclosure, RadioGroup, Tab } from "@headlessui/react"
-import { StarIcon } from "@heroicons/react/20/solid"
 import {
-	HeartIcon,
-	MinusIcon,
-	PlusIcon,
-	TrashIcon,
+	TrashIcon
 } from "@heroicons/react/24/outline"
 import Client from "../services/api"
 import { useParams } from "react-router-dom"
@@ -27,7 +22,6 @@ const ListDetails = ({ user, getAllListings, file, handleImageChange, handleUplo
 
 	const getListing = async () => {
 		const res = await Client.get(`/listings/${listingId}`)
-		console.log(res.data)
 		setSelectedListing(res.data)
 	}
 
