@@ -78,6 +78,7 @@ function App() {
       () => {
         // download url
         getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+        // uploadTask.snapshot.ref refers to the image we just uploaded
           setImageUrl(url)
         });
       }
