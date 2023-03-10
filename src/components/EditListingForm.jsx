@@ -62,7 +62,7 @@ const EditListingForm = ({
 
 	return (
 		<div>
-			<div className="flex justify-center">
+			<div className="flex justify-center border-2 border-black">
 				<form
 					className="space-y-14 divide-y divide-gray-200 w-1/2"
 					onSubmit={handleSubmit}

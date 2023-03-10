@@ -86,6 +86,7 @@ const ListDetails = ({ user, getAllListings, file, handleImageChange, handleUplo
 							)}
 
 							{/* {profile link} */}
+							{!toggleEditing && (
 							<Link to={`/profile/${selectedListing.owner?.id}`}>
 								<div className="flex mt-6">
 									<div className="mr-4 flex-shrink-0 self-center">
@@ -109,6 +110,7 @@ const ListDetails = ({ user, getAllListings, file, handleImageChange, handleUplo
 									</div>
 								</div>
 							</Link>
+							)}
 
 							{toggleEditing && (
 								<EditListingForm
