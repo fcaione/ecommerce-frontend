@@ -20,7 +20,7 @@ const ListCard = ({ id, name, image, color, price, getAllListings, user, userId,
 							className="h-full w-full object-cover object-center"
 						/>
 					</div>
-					<div className="flex justify-center items-center text-center">{sold && <h1 className="text-4xl font-bold tracking-tight text-white absolute lg:right-18 lg:top-28 md:top-20 sm:top-20 xs:top-20">SOLD</h1>}</div>
+					<div className="flex justify-center items-center text-center">{sold && <h1 id="sold" className="text-4xl font-bold tracking-tight text-white absolute lg:right-18 lg:top-28 md:top-20 sm:top-20 xs:top-20">SOLD</h1>}</div>
 					<h3 className="mt-4 text-sm text-gray-700">
 						<span className="absolute inset-0" />
 						{name}
