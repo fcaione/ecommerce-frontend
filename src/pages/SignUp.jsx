@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { RegisterUser } from "../services/Auth"
-import Footer from "../components/Footer"
 import signuppic from "../images/signuppic.jpeg"
 import logoimage from "../images/iconfinal.png"
 
@@ -136,7 +135,6 @@ const SignUp = () => {
 				/>
 			</div>
 		</div>
-    <Footer/>
     </>
 	)
 }
