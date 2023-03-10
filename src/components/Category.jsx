@@ -18,7 +18,7 @@ const Category = () => {
       imageSrc: 'https://cf.shopee.com.mx/file/sg-11134201-22120-2rrnz4ovqjlvfa_tn',
     },
     {
-      name: 'Accesories',
+      name: 'Accessories',
       href: '/listings/tag/Accessories',
       imageSrc: 'https://media.sunglasshut.com/2023/01_Trend_Neutrals/MOBILE/MOBILE_HERO.jpg',
     },
