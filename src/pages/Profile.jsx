@@ -33,7 +33,7 @@ const Profile = ({ listings, getAllListings }) => {
     return (
       <div>
         <div>
-          <img className="h-32 w-full object-cover lg:h-48" src={profile.backgroundImage} alt="" />
+          <img className="h-32 w-full object-cover lg:h-48 object-center" src={profile.backgroundImage} alt="" />
         </div>
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
