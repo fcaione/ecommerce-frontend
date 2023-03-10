@@ -12,10 +12,10 @@ import { useParams, useNavigate } from "react-router-dom"
 
 const ProfileSettings = ({
 	user,
-    handleImageChange,
-    percent,
-    imageUrl,
-    handleUpload
+	handleImageChange,
+	percent,
+	imageUrl,
+	handleUpload,
 }) => {
 	const navigate = useNavigate()
 
@@ -23,9 +23,9 @@ const ProfileSettings = ({
 
 	const [formValues, setFormValues] = useState({
 		name: user.name,
-        email: user.email,
-		profileImage: imageUrl,
-		userId: user.id
+		email: user.email,
+		profileImage: user.profileImage,
+		userId: user.id,
 	})
 
 	const handleChange = (e) => {
@@ -37,13 +37,13 @@ const ProfileSettings = ({
 		await Client.put(`/users/update`, {
 			name: formValues.name,
 			email: formValues.price,
-			profileImage: imageUrl,
-			userId: user.id
+			profileImage: imageUrl || user.profileImage,
+			userId: user.id,
 		})
 		navigate(`/profile/${user?.id}`)
 	}
 
-	return (
+	return user && (
 		<div>
 			<div className="flex justify-center">
 				<form
@@ -93,7 +93,7 @@ const ProfileSettings = ({
 									<div className="mt-2">
 										<input
 											name="email"
-                                            type="email"
+											type="email"
 											value={formValues.email}
 											id="email"
 											required

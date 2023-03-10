@@ -30,7 +30,7 @@ const EditListingForm = ({
 		name: selectedListing.name,
 		price: selectedListing.price,
 		soldOut: false,
-		image: imageUrl,
+		image: selectedListing.image,
 		description: selectedListing.description,
 		userId: user?.id,
 	})
@@ -45,7 +45,7 @@ const EditListingForm = ({
 			name: formValues.name,
 			price: formValues.price,
 			soldOut: formValues.soldOut,
-			image: imageUrl,
+			image: imageUrl || selectedListing.image,
 			description: formValues.description,
 			userId: user?.id,
 		})

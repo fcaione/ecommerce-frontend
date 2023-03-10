@@ -21,6 +21,7 @@ const Profile = ({ listings, getAllListings }) => {
 
   useEffect(() => {
     getUser()
+    getAllListings()
   }, [])
   
   const profile = {
