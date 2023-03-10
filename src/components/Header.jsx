@@ -210,7 +210,7 @@ const Header = ({ user, setUser }) => {
                           key={category.name}
                           className={({ selected }) =>
                             classNames(
-                              selected ? 'border-indigo-600 text-indigo-600' : 'border-transparent text-gray-900',
+                              selected ? 'border-red-600 text-red-600' : 'border-transparent text-gray-900',
                               'flex-1 whitespace-nowrap border-b-2 py-4 px-1 text-base font-medium'
                             )
                           }
@@ -290,7 +290,8 @@ const Header = ({ user, setUser }) => {
           </div>
 
           {/* Secondary navigation */}
-          <div className="bg-white bg-opacity-10 backdrop-blur-md backdrop-filter">
+          {/* className="bg-white bg-opacity-10 backdrop-blur-md backdrop-filter" */}
+          <div>
             <div className="mx-auto px-4 sm:px-6 lg:px-8 ">
               <div>
                 <div className="flex h-16 items-center justify-between ">
