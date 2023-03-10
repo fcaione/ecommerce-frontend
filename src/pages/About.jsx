@@ -15,7 +15,7 @@ const About = () => {
       author: {
         name: 'LinkedIn',
         imageUrl:
-          'https://cdn-user-icons.flaticon.com/95365/95365319/1678113940573.svg?token=exp=1678114841~hmac=f2593a83d5957c5ac18342b7edc23e87',
+          'https://1000logos.net/wp-content/uploads/2017/03/Color-of-the-LinkedIn-Logo.jpg',
       },
     },
     {
@@ -30,7 +30,7 @@ const About = () => {
       author: {
         name: 'LinkedIn',
         imageUrl:
-          'https://cdn-user-icons.flaticon.com/95365/95365319/1678113940573.svg?token=exp=1678114841~hmac=f2593a83d5957c5ac18342b7edc23e87',
+          'https://1000logos.net/wp-content/uploads/2017/03/Color-of-the-LinkedIn-Logo.jpg',
       },
     },
     {
@@ -45,7 +45,7 @@ const About = () => {
       author: {
         name: 'LinkedIn',
         imageUrl:
-          'https://cdn-user-icons.flaticon.com/95365/95365319/1678113940573.svg?token=exp=1678114841~hmac=f2593a83d5957c5ac18342b7edc23e87',
+          'https://1000logos.net/wp-content/uploads/2017/03/Color-of-the-LinkedIn-Logo.jpg',
       },
     },
     // More posts...
@@ -81,7 +81,7 @@ const About = () => {
                       <circle cx={1} cy={1} r={1} />
                     </svg>
                     <div className="flex gap-x-2.5">
-                      <img src={post.author.imageUrl} alt="" className="h-6 w-6 flex-none rounded-full bg-white/10" />
+                      <img src={post.author.imageUrl} alt="" className="h-6 w-6 flex-none rounded-full bg-white/10 object-cover" />
                       {post.author.name}
                     </div>
                   </div>
