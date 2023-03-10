@@ -9,7 +9,7 @@ const Collection = (props) => {
       <div className="bg-white">
         <div className="mx-auto max-w-2xl py-16 px-4  sm:px-6 lg:max-w-7xl lg:px-8 md:max-w-7xl">
           <div className="md:flex md:items-center md:justify-between">
-            <h2 className="text-2xl font-bold tracking-tight text-gray-900">Lastest Products</h2>
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900">Latest Products</h2>
             <Link to="/listings">
             <button className="hidden text-sm font-medium text-slate-900 hover:text-slate-500 md:block">
               Shop the collection
