@@ -31,7 +31,6 @@ function App() {
 
   const getAllListings = async () => {
     const res = await Client.get(`/listings`)
-    console.log(res.data)
     await res.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
     setListings(res.data)
   }

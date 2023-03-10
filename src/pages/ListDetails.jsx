@@ -27,7 +27,6 @@ const ListDetails = ({ user, getAllListings, file, handleImageChange, handleUplo
 
 	const getListing = async () => {
 		const res = await Client.get(`/listings/${listingId}`)
-		console.log(res.data)
 		setSelectedListing(res.data)
 	}
 
