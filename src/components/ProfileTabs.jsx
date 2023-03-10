@@ -127,7 +127,7 @@ function classNames(...classes) {
                       className={({ selected }) =>
                         classNames(
                           selected
-                            ? 'border-indigo-500 text-indigo-600'
+                            ? 'border-red-500 text-red-600'
                             : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700',
                           'whitespace-nowrap border-b-2 py-6 text-sm font-medium'
                         )

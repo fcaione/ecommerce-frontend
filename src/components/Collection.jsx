@@ -11,7 +11,7 @@ const Collection = (props) => {
           <div className="md:flex md:items-center md:justify-between">
             <h2 className="text-2xl font-bold tracking-tight text-gray-900">Lastest Products</h2>
             <Link to="/listings">
-            <button className="hidden text-sm font-medium text-indigo-600 hover:text-indigo-500 md:block">
+            <button className="hidden text-sm font-medium text-slate-900 hover:text-slate-500 md:block">
               Shop the collection
               <span aria-hidden="true"> &rarr;</span>
             </button>
@@ -26,7 +26,7 @@ const Collection = (props) => {
   
           <div className="mt-8 text-sm md:hidden">
             <Link to="/listings">
-            <button className="font-medium text-indigo-600 hover:text-indigo-500">
+            <button className="font-medium text-slate-900 hover:text-slate-500">
               Shop the collection
               <span aria-hidden="true"> &rarr;</span>
             </button>
