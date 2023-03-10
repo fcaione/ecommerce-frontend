@@ -1,4 +1,3 @@
-import Footer from "../components/Footer"
 import { useState } from "react"
 import Client from "../services/api"
 import { useNavigate } from "react-router-dom"
@@ -167,7 +166,6 @@ const AddListingsForm = ({ user, getAllListings, file, handleChange, handleUploa
           </div>
         </form>
       </div>
-      <Footer />
     </div>
   )
 }

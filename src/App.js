@@ -16,6 +16,7 @@ import TagListings from "./pages/TagListings"
 import storage from "./firebaseConfig.js"
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import ProfileSettings from './pages/ProfileSettings'
+import Footer from "./components/Footer"
 
 function App() {
   const [listings, setListings] = useState([])
@@ -99,6 +100,7 @@ function App() {
         <Route path="/addListingsForm" element={<AddListingsForm user={user} getAllListings={getAllListings} file={file} handleChange={handleChange} handleUpload={handleUpload} percent={percent} imageUrl={imageUrl} />} />
         <Route path="/settings" element={<ProfileSettings handleImageChange={handleChange} user={user} imageUrl={imageUrl} handleUpload={handleUpload} percent={percent}/>} />
       </Routes>
+      <Footer/>
     </>
   )
 }

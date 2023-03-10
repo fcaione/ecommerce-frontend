@@ -1,5 +1,4 @@
 import ListCard from "../components/ListCard"
-import Footer from "../components/Footer"
 import { useState, useEffect } from "react"
 import Client from "../services/api"
 import { useParams } from "react-router-dom"
@@ -41,7 +40,6 @@ const TagListings = () => {
 							))}
 						</div>
 					</div>
-					<Footer />
 				</div>
 			</>
 		)

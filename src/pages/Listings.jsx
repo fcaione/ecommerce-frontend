@@ -1,5 +1,4 @@
 import ListCard from "../components/ListCard"
-import Footer from "../components/Footer"
 import { useParams } from "react-router-dom"
 
 const Listings = ({ listings, getAllListings }) => {
@@ -25,7 +24,6 @@ const Listings = ({ listings, getAllListings }) => {
 							))}
 						</div>
 					</div>
-					<Footer />
 				</div>
 			</>
 		)

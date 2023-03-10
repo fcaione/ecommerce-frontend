@@ -1,7 +1,6 @@
 import { SignInUser } from "../services/Auth"
 import { useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
-import Footer from "../components/Footer"
 import signInPic from "../images/signinpicture.jpeg"
 import logoimage from "../images/iconfinal.png"
 
@@ -127,7 +126,6 @@ const SignIn = (props) => {
         </div>
       </div>
       <div>
-        <Footer/>
       </div>
     </>
   )
