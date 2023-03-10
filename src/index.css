@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#sold {
+  text-shadow: 2px 2px red;
+}

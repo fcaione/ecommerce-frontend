@@ -24,7 +24,7 @@ const Category = () => {
     },
     {
       name: 'Misc',
-      href: '#',
+      href: '/listings/tag/Other',
       imageSrc: 'https://ae01.alicdn.com/kf/U5872d773acd7491baf054119f27ed60dW/Keep-off-Rug-Keepoff-Classic-Virgil-Abloh-Rugs-Off-White-Pattern-Rug-Rugs-Living-Room-Washable.jpg_Q90.jpg_.webp',
     },
   ]
