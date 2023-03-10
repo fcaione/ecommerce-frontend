@@ -76,7 +76,7 @@ const Profile = ({ listings, getAllListings }) => {
         </div>
         
         <ProfileTabs user={user} listings={listings} getAllListings={getAllListings} />
-        <Footer />
+        {/* <Footer /> */}
       </div>
 
     )

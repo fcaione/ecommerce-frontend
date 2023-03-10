@@ -23,7 +23,8 @@ const tabs = [
                 name={listing.name}
                 color={listing.color}
                 price={listing.price}
-                getAllListings={getAllListings}  
+                getAllListings={getAllListings}
+                sold={listing.soldOut}  
                 />)
                 }
               })}
@@ -78,7 +79,8 @@ const tabs = [
               name={listing.name}
               color={listing.color}
               price={listing.price}
-              getAllListings={getAllListings}  
+              getAllListings={getAllListings}
+              sold={true} 
               />)
               }
             })}
@@ -94,7 +96,7 @@ const tabs = [
       {
         name: "Everything you'll need",
         content:
-          'The Organize base set includes the pen, phone, small, and large trays to help you group all your essential items. Expand your set with the drink coaster and headphone stand add-ons.',
+          'Saved feature coming soon! Be ready to bookmark your favorite listings to browse at another time',
         imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-06-detail-04.jpg',
         imageAlt: 'Walnut organizer system on black leather desk mat on top of white desk.',
       },
