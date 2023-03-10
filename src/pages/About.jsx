@@ -1,5 +1,4 @@
 import Header from "../components/Header"
-import Footer from "../components/Footer"
 
 const About = () => {
   const posts = [
@@ -97,7 +96,6 @@ const About = () => {
           </div>
         </div>
       </div>
-      <Footer/>
     </div>
   )
 }

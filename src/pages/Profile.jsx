@@ -1,5 +1,4 @@
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/20/solid'
-import Footer from '../components/Footer'
 import ProfileTabs from '../components/ProfileTabs'
 import SignIn from './SignIn'
 import Client from '../services/api'
@@ -76,7 +75,6 @@ const Profile = ({ listings, getAllListings }) => {
         </div>
         
         <ProfileTabs user={user} listings={listings} getAllListings={getAllListings} />
-        {/* <Footer /> */}
       </div>
 
     )
