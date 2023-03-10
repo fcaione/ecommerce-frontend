@@ -1,4 +1,4 @@
-import Header from "../components/Header"
+
 
 const About = () => {
   const posts = [

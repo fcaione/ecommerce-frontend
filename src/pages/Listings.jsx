@@ -1,5 +1,5 @@
 import ListCard from "../components/ListCard"
-import { useParams } from "react-router-dom"
+
 
 const Listings = ({ listings, getAllListings }) => {
 	return (
