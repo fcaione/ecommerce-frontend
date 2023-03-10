@@ -28,7 +28,7 @@ const Comments = (props) => {
 		await props.getListing()
 	}
 
-	return props.comments.length > 0 && (
+	return props.comments?.length > 0 && (
 			<div className="bg-white">
 				<div className="mx-auto max-w-2xl py-0 px-4 sm:py-8 sm:px-6 lg:max-w-7xl lg:px-8">
 					<h2 id="reviews-heading" className="sr-only">
