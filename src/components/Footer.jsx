@@ -55,8 +55,8 @@ const Footer = () => {
   ]
   
     return (
-      <footer className="bg-[#000000] fixed inset-x-0 bottom-0">
-        <div className="mx-auto py-5 px-6 md:flex md:items-center md:justify-between lg:px-8">
+      <footer className="bg-[#000000]">
+        <div className="mx-auto py-3 px-6 md:flex md:items-center md:justify-between lg:px-8">
           <div className="flex justify-center space-x-6 md:order-2">
             {navigation.map((item, index) => (
               <a key={index} href={item.href} className="text-gray-400 hover:text-gray-500">
