@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const Highlight = () => {
 
   return (
-        <section aria-labelledby="comfort-heading" className="mx-auto max-w-7xl pb-24 pt-10 px-4 sm:px-6 lg:px-8">
+        <section aria-labelledby="comfort-heading" className="mx-auto max-w-7xl pb-28 pt-10 px-4 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden rounded-lg">
             <div className="absolute inset-0">
               <img
