@@ -20,13 +20,16 @@ Thredz is an e-commerce app where users can create their own profiles to post an
 ***
 ### ***Screenshots***
 
-#### **image header 1**
+#### **Sign in**
 ![Sign in page](./src/images/SignIn.png)
 
+#### **Home**
 ![Home page](./src/images/HomeSc.png)
 
+#### **Listing**
 ![Listing page](./src/images/Listing_details.png)
 
+#### **Profile**
 ![Profile page](./src/images/Profile_page.png)
 ***
 ### ***Future Updates***
