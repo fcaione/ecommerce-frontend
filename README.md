@@ -5,6 +5,9 @@
 ***
 ### ***Description***
 Thredz is an e-commerce app where users can create their own profiles to post and sell their products locally or through delivery. It also doubles as a social app where users can interact with each other through commenting on listings and viewing each others profiles. Through this app we hope to promote reusability, reselling and thrift culture in order to combat fast fashion.
+***
+### ***Getting Started***
+You can navigate to our website [here!](https://thredz.netlify.app/)
 
 ***
 ### ***Technologies Used***
@@ -20,13 +23,13 @@ Thredz is an e-commerce app where users can create their own profiles to post an
 ***
 ### ***Screenshots***
 
-#### **image header 1**
+#### **Sign In Page**
 ![Sign in page](./src/images/SignIn.png)
-
+#### **Home Page**
 ![Home page](./src/images/HomeSc.png)
-
+#### **Listing Page**
 ![Listing page](./src/images/Listing_details.png)
-
+#### **Profile Page**
 ![Profile page](./src/images/Profile_page.png)
 ***
 ### ***Future Updates***
